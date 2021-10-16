@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+        <record id="io_certification_tree_view" model="ir.ui.view">
+            <field name="name">io.certification.tree.io</field>
+            <field name="model">io.certification</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                    <tree string="Certificate Types" delete="1">
+                            <field name="name"/>
+                            <field name="code"/>
+                    </tree>
+            </field>
+        </record>
+        <record id="io_certification_form_view" model="ir.ui.view">
+            <field name="name">io.certification.form.io</field>
+            <field name="model">io.certification</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Certificate">
+                    <sheet>
+                        <group name="Details">
+                            <field name="name"/>
+                            <field name="code"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+</odoo>
+

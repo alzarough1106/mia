@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <record id="io_penalty_tree_io" model="ir.ui.view">
+            <field name="name">io.penalty.tree.io</field>
+            <field name="model">io.penalty</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                    <tree string="Penalties" delete="1">
+                            <field name="name"/>
+                             <field name="date"/>
+                             <field name="points" sum="Total Points"/>
+                    </tree>
+            </field>
+        </record>
+        <record id="io_penalty_form_io" model="ir.ui.view">
+            <field name="name">io.penalty.form.io</field>
+            <field name="model">io.penalty</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Penalty History">
+                    <sheet>
+                        <group cols="">
+                        <group name="Details">
+                            <field name="name"/>
+                             <field name="date"/>
+                             <field name="employee_id" readonly="1"/>
+                             <field name="points"/>
+
+                             <field name="notes"/>
+
+                        </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+</odoo>
+

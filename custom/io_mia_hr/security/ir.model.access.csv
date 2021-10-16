@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_io_employment_degree,io.employment.degree,model_io_employment_degree,hr.group_hr_user,1,1,1,0
+access_io_exit_permissions,io.exit.permissions,model_io_exit_permissions,hr.group_hr_user,1,1,1,0
+access_io_penalty,io.penalty.degree,model_io_penalty,hr.group_hr_user,1,1,1,0
+access_loza_employee_transfer,loza.employee_transfer,model_loza_employee_transfer,hr.group_hr_user,1,1,1,0
+access_io_certification,io.certification,model_io_certification,hr.group_hr_user,1,1,1,0

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="io_emp_category_perm" model="hr.employee.category">
+            <field name="name">Permanent</field>
+        </record>
+        <record id="io_emp_category_cont" model="hr.employee.category">
+            <field name="name">Contractor</field>
+        </record>
+        <record id="io_emp_category_cont" model="hr.employee.category">
+            <field name="name">Retired</field>
+        </record>
+    </data>
+</odoo>

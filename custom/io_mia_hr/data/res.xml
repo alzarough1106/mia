@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# LOZA LTD CONFIDENTIAL
+# __________________
+#
+#  [2020] - [2021] Loza Limited - Tripoli Libya
+#  All Rights Reserved.
+#
+# NOTICE:  All information contained herein is, and remains
+# the property of Loza Limited and its suppliers,
+# if any.  The intellectual and technical concepts contained
+# herein are proprietary to Loza Limited
+# and its suppliers and may be covered by International Laws and Patents,
+# patents in process, and are protected by trade secret or copyright law.
+# Dissemination of this information or reproduction of this material
+# is strictly forbidden unless prior written permission is obtained
+# from Loza Limited
+-->
+<odoo>
+    <data>
+        <record id="company_contact_main" model="res.partner">
+            <field name="name">Medical Insurance Authority</field>
+        </record>
+        <record id="base.main_company" model="res.company">
+            <field name="logo" type="base64" file="io_mia_hr/static/description/logo.png"/>
+            <field name="favicon" type="base64" file="io_mia_hr/static/description/icon.png"/>
+            <field name="name">هيئة التأمين الطبي</field>
+            <field name="street">سيدي خليفة</field>
+            <field name="street2"></field>
+            <field name="city">طرابلس</field>
+            <field name="country_id" ref="base.ly"/>
+            <field name="currency_id" ref="base.LYD"/>
+            <field name="state_id" ref="io_mia_ly_res_state_TM"/>
+            <field name="website">www.mia.gov.ly</field>
+            <field name="email">info@mia.gov.ly</field>
+            <field name="phone">021.443.2138</field>
+        </record>
+    <record id="resource_calendar_std_35h" model="resource.calendar">
+        <field name="name">Mia Standard 25 hours/week</field>
+        <field name="company_id" ref="base.main_company"/>
+        <field name="hours_per_day">5.0</field>
+        <field name="attendance_ids"
+            eval="[(5, 0, 0),
+                (0, 0, {'name': 'Sunday Morning', 'dayofweek': '6', 'hour_from': 9, 'hour_to': 14, 'day_period': 'morning'}),
+                (0, 0, {'name': 'Monday Morning', 'dayofweek': '0', 'hour_from': 9, 'hour_to': 14, 'day_period': 'morning'}),
+                (0, 0, {'name': 'Tuesday Morning', 'dayofweek': '1', 'hour_from': 9, 'hour_to': 14, 'day_period': 'morning'}),
+                (0, 0, {'name': 'Wednesday Morning', 'dayofweek': '2', 'hour_from': 9, 'hour_to': 14, 'day_period': 'morning'}),
+                (0, 0, {'name': 'Thursday Morning', 'dayofweek': '3', 'hour_from': 9, 'hour_to': 14, 'day_period': 'morning'}),
+            ]"
+        />
+    </record>
+    </data>
+</odoo>

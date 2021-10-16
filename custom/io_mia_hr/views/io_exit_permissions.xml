@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <record id="io_exit_permissions_tree_io" model="ir.ui.view">
+            <field name="name">io.exit.permissions.tree.io</field>
+            <field name="model">io.exit.permissions</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                    <tree string="أذونات الخروج"
+                        decoration-bf="sorted == False">
+                            <field name="exit_id"/>
+                             <field name="employee_id"/>
+                             <field name="exit_dt"/>
+                             <field name="sorted" invisible="1"/>
+                    </tree>
+            </field>
+        </record>
+        <record id="io_exit_permissions_form_io" model="ir.ui.view">
+            <field name="name">io.exit.permissions.form.io</field>
+            <field name="model">io.exit.permissions</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="أذن الخروج">
+                    <header>
+                             <button name="action_accept_exit_permission" string="قبول" type="object" states="draft"
+                                class="oe_highlight" groups="io_mia_hr.group_mia_hr"/>
+                            <field name="state" widget="statusbar"
+                                   statusbar_visible="draft,done" readonly="1"/>
+                    </header>
+                    <sheet>
+                        <group cols="">
+                        <group name="بيانات الأذن">
+                         <field name="exit_id"/>
+                         <field name="employee_id"/>
+                         <field name="exit_dt"/>
+                        </group>
+                        </group>
+                    </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh':'recipients'}"/>
+                </div>
+                </form>
+            </field>
+        </record>
+</odoo>
+

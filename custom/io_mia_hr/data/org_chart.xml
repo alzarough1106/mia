@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="io_orgchart_root" model="hr.department">
+            <field name="name">لجنة الإدارة</field>
+            <field name="parent_id"></field>
+        </record>
+        <record id="io_orgchart_root_chairman" model="hr.department">
+            <field name="name">رئيس لجنة الإدارة</field>
+            <field name="parent_id" ref="io_orgchart_root"/>
+        </record>
+        <record id="io_orgchart_root_chairman_office" model="hr.department">
+            <field name="name">مكتب شئوون لجنة الإدارة</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman"/>
+        </record>
+        <!--
+        <record id="io_orgchart_root_chairman_secretary" model="hr.department">
+            <field name="name">مدير مكتب رئيس اللجنة</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman"/>
+        </record> -->
+        <record id="io_orgchart_root_chairman_pr" model="hr.department">
+            <field name="name">مكتب العلاقات الخارجية والتعاون الدولي</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman"/>
+        </record>
+        <!-- The Departments -->
+        <record id="io_orgchart_root_chairman_hr" model="hr.department">
+            <field name="name">إدارة الموارد البشرية والشئوون الإدارية والخدمات</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman"/>
+        </record>
+        <record id="io_orgchart_root_chairman_hr_hr" model="hr.department">
+            <field name="name">قسم الموارد البشرية</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_hr"/>
+        </record>
+        <record id="io_orgchart_root_chairman_hr_hr_emp" model="hr.department">
+            <field name="name">وحدة شئون الموظفين</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_hr_hr"/>
+        </record>
+        <record id="io_orgchart_root_chairman_hr_hr_training" model="hr.department">
+            <field name="name">وحدة التدريب والتطوير</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_hr_hr"/>
+        </record>
+        <record id="io_orgchart_root_chairman_hr_ad" model="hr.department">
+            <field name="name">قسم الشئوون الإدارية والخدمات</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_hr"/>
+        </record>
+        <record id="io_orgchart_root_chairman_hr_ad_ad" model="hr.department">
+            <field name="name">وحدة الشئون الإدارية</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_hr_ad"/>
+        </record>
+        <record id="io_orgchart_root_chairman_hr_ad_arch" model="hr.department">
+            <field name="name">وحدة المحفوظات</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_hr_ad"/>
+        </record>
+        <record id="io_orgchart_root_chairman_hr_ad_serv" model="hr.department">
+            <field name="name">وحدة الخدمات والحركة</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_hr_ad"/>
+        </record>
+        <record id="io_orgchart_root_chairman_hr_pr" model="hr.department">
+            <field name="name">قسم الإعلام والعلاقات العامة</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_hr"/>
+        </record>
+        <record id="io_orgchart_root_chairman_hr_pr_gen" model="hr.department">
+            <field name="name">وحدة العلاقات العامة</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_hr_pr"/>
+        </record>
+        <record id="io_orgchart_root_chairman_hr_pr_pr" model="hr.department">
+            <field name="name">وحدة الإعلام</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_hr_pr"/>
+        </record>
+        <record id="io_orgchart_root_chairman_hr_ins" model="hr.department">
+            <field name="name">قسم التأمين الصحي</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_hr"/>
+        </record>
+        <record id="io_orgchart_root_chairman_finance" model="hr.department">
+            <field name="name">إدارة الشئون المالية والحسابات</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman"/>
+        </record>
+        <record id="io_orgchart_root_chairman_fin_fin" model="hr.department">
+            <field name="name">قسم الشئون المالية</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_finance"/>
+        </record>
+        <record id="io_orgchart_root_chairman_fin_acc" model="hr.department">
+            <field name="name">قسم الحسابات والميزانية</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_finance"/>
+        </record>
+        <record id="io_orgchart_root_chairman_fin_cash" model="hr.department">
+            <field name="name">قسم الحزينة</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_finance"/>
+        </record>
+        <record id="io_orgchart_root_chairman_fin_proc" model="hr.department">
+            <field name="name">قسم المشتريات والمخازن</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_finance"/>
+        </record>
+
+
+
+
+
+
+
+        <record id="io_orgchart_root_chairman_technical" model="hr.department">
+            <field name="name">إدارة الشئوون الفنية والاشتراكات</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman"/>
+        </record>
+        <record id="io_orgchart_root_chairman_technical_sub" model="hr.department">
+            <field name="name">قسم الاشتراكات والتسجيل والتوثيق</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_technical"/>
+        </record>
+        <record id="io_orgchart_root_chairman_technical_sub_public" model="hr.department">
+            <field name="name">مكتب القطاع العام</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_technical_sub"/>
+        </record>
+        <record id="io_orgchart_root_chairman_technical_sub_private" model="hr.department">
+            <field name="name">مكتب القطاع الخاص</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_technical_sub"/>
+        </record>
+        <record id="io_orgchart_root_chairman_technical_tech" model="hr.department">
+            <field name="name">قسم الشئوون الفنية</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_technical"/>
+        </record>
+        <record id="io_orgchart_root_chairman_technical_med" model="hr.department">
+            <field name="name">قسم الشئوون الطبية</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_technical"/>
+        </record>
+
+
+
+
+
+        <record id="io_orgchart_root_chairman_insmon" model="hr.department">
+            <field name="name">إدارة التفتيش والمتابعة</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman"/>
+        </record>
+        <record id="io_orgchart_root_chairman_insmon_inspection" model="hr.department">
+            <field name="name">قسم التفتيش</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_insmon"/>
+        </record>
+        <record id="io_orgchart_root_chairman_insmon_followup" model="hr.department">
+            <field name="name">قسم المتابعة</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_insmon"/>
+        </record>
+        <record id="io_orgchart_root_chairman_branches" model="hr.department">
+            <field name="name">إدارة الفروع</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman"/>
+        </record>
+        <record id="io_orgchart_root_chairman_branches_monitoring" model="hr.department">
+            <field name="name">قسم مراقبة الفروع</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_branches"/>
+        </record>
+
+        <record id="io_orgchart_root_chairman_branches_followup" model="hr.department">
+            <field name="name">قسم الرصد والمتابعة</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_branches"/>
+        </record>
+        <record id="io_orgchart_root_chairman_legal" model="hr.department">
+            <field name="name">إدارة الشئوون القانونية</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman"/>
+        </record>
+        <record id="io_orgchart_root_chairman_legal_process" model="hr.department">
+            <field name="name">قسم الإجراءات</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_legal"/>
+        </record>
+        <record id="io_orgchart_root_chairman_legal_case" model="hr.department">
+            <field name="name">قسم متابعة القضايا</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_legal"/>
+        </record>
+
+        <record id="io_orgchart_root_chairman_risk" model="hr.department">
+            <field name="name">إدارة تنمية الوعي التأميني والحد من المخاطر</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman"/>
+        </record>
+        <record id="io_orgchart_root_chairman_risk_mit" model="hr.department">
+            <field name="name">قسم الحد من المخاطر</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_risk"/>
+        </record>
+        <record id="io_orgchart_root_chairman_risk_dev" model="hr.department">
+            <field name="name">قسم تنمية المهارات الطبية</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_risk"/>
+        </record>
+        <record id="io_orgchart_root_chairman_it" model="hr.department">
+            <field name="name">إدارة تقنية المعلومات</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman"/>
+        </record>
+        <record id="io_orgchart_root_chairman_it_infra" model="hr.department">
+            <field name="name">قسم البنية التحتية والخدمات التقنية</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_it"/>
+        </record>
+        <record id="io_orgchart_root_chairman_it_sys" model="hr.department">
+            <field name="name">قسم النظم والتطبيقات</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_it"/>
+        </record>
+        <record id="io_orgchart_root_chairman_planning" model="hr.department">
+            <field name="name">إدارة التخطيط والإستثمار</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman"/>
+        </record>
+
+
+
+
+
+
+
+
+
+        <record id="io_orgchart_root_chairman_planning_nat" model="hr.department">
+            <field name="name">قسم الإستثمار الداخلي</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_planning"/>
+        </record>
+        <record id="io_orgchart_root_chairman_planning_int" model="hr.department">
+            <field name="name">قسم الإستثمار الخارجي</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_planning"/>
+        </record>
+        <record id="io_orgchart_root_chairman_planning_pla" model="hr.department">
+            <field name="name">قسم التخطيط</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_planning"/>
+        </record>
+        <record id="io_orgchart_root_chairman_planning_mkt" model="hr.department">
+            <field name="name">قسم التسويق</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_planning"/>
+        </record>
+        <record id="io_orgchart_root_chairman_internal_auditing" model="hr.department">
+            <field name="name">إدارة المراجعة الداخلية</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman"/>
+        </record>
+        <record id="io_orgchart_root_chairman_branches_fin" model="hr.department">
+            <field name="name">قسم المراجعة المالية</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_branches"/>
+        </record>
+        <record id="io_orgchart_root_chairman_branches_tec" model="hr.department">
+            <field name="name">قسم المراجعة الفنية</field>
+            <field name="parent_id" ref="io_orgchart_root_chairman_branches"/>
+        </record>
+
+
+
+
+    </data>
+</odoo>

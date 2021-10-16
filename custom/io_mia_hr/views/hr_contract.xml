@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <record id="hr_contract_search_inherit_form_io" model="ir.ui.view">
+            <field name="name">hr.contract.search.inherit.form.io</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_search" />
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='running']" position="before">
+                            <filter name="about_to_expire" string="About to Expire" domain="[('date_end','&gt;',context_today().strftime('%Y-%m-%d')),('date_end','&lt;',(context_today() + datetime.timedelta(days=30)).strftime('%Y-%m-%d')),('state','=','open') ]" help="Show contracts about to be expired in the next 30 days"/>
+                            <filter name="expired" string="Expired" domain="[('date_end','&lt;',context_today().strftime('%Y-%m-%d')),('state','=','open') ]" help="Show contracts that are expired"/>
+                </xpath>
+           </field>
+        </record>
+        <record id="hr_contract_inherit_form_io" model="ir.ui.view">
+            <field name="name">hr.contract.inherit.form.io</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
+            <field name="arch" type="xml">
+                <field name="job_id" position="after">
+                    <field name="contract_type" />
+                </field>
+            </field>
+        </record>
+
+</odoo>
+

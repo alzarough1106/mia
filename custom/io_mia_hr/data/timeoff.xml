@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# LOZA LTD CONFIDENTIAL
+# __________________
+#
+#  [2020] - [2021] Loza Limited - Tripoli Libya
+#  All Rights Reserved.
+#
+# NOTICE:  All information contained herein is, and remains
+# the property of Loza Limited and its suppliers,
+# if any.  The intellectual and technical concepts contained
+# herein are proprietary to Loza Limited
+# and its suppliers and may be covered by International Laws and Patents,
+# patents in process, and are protected by trade secret or copyright law.
+# Dissemination of this information or reproduction of this material
+# is strictly forbidden unless prior written permission is obtained
+# from Loza Limited
+-->
+<odoo>
+    <data>
+        <record id="holiday_sick_leave" model="hr.leave.type">
+            <field name="name">Sick Leave Timeoff</field>
+            <field name="request_unit">day</field>
+            <field name="allocation_type">fixed</field>
+            <field name="leave_validation_type">hr</field>
+            <field name="leave_notif_subtype_id">1</field>
+            <field name="allocation_notif_subtype_id">1</field>
+            <field name="create_calendar_meeting">True</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="holiday_emergency_leave" model="hr.leave.type">
+            <field name="name">Emergency Leave</field>
+            <field name="request_unit">day</field>
+            <field name="allocation_type">fixed</field>
+            <field name="leave_validation_type">hr</field>
+            <field name="leave_notif_subtype_id">1</field>
+            <field name="allocation_notif_subtype_id">1</field>
+            <field name="create_calendar_meeting">True</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="holiday_standard" model="hr.leave.type">
+            <field name="name">Standard Yearly Leave</field>
+            <field name="request_unit">day</field>
+            <field name="allocation_type">fixed</field>
+            <field name="leave_validation_type">both</field>
+            <field name="leave_notif_subtype_id">1</field>
+            <field name="allocation_notif_subtype_id">1</field>
+            <field name="create_calendar_meeting">True</field>
+            <field name="color_name">lightgreen</field>
+        </record>
+        <record id="holiday_standard_long" model="hr.leave.type">
+            <field name="name">Standard Long Yearly Leave</field>
+            <field name="request_unit">day</field>
+            <field name="allocation_type">fixed</field>
+            <field name="leave_validation_type">both</field>
+            <field name="leave_notif_subtype_id">1</field>
+            <field name="allocation_notif_subtype_id">1</field>
+            <field name="create_calendar_meeting">True</field>
+            <field name="color_name">lightgreen</field>
+        </record>
+
+        <record id="holiday_marriage" model="hr.leave.type">
+            <field name="name">Marriage Leave</field>
+            <field name="request_unit">day</field>
+            <field name="allocation_type">fixed</field>
+            <field name="leave_validation_type">both</field>
+            <field name="leave_notif_subtype_id">1</field>
+            <field name="allocation_notif_subtype_id">1</field>
+            <field name="create_calendar_meeting">True</field>
+            <field name="color_name">lightblue</field>
+        </record>
+        <record id="holiday_parenting" model="hr.leave.type">
+            <field name="name">Parenthood Leave</field>
+            <field name="request_unit">day</field>
+            <field name="allocation_type">fixed</field>
+            <field name="leave_validation_type">both</field>
+            <field name="leave_notif_subtype_id">1</field>
+            <field name="allocation_notif_subtype_id">1</field>
+            <field name="create_calendar_meeting">True</field>
+            <field name="color_name">lightblue</field>
+        </record>
+        <record id="holiday_twin_parenting" model="hr.leave.type">
+            <field name="name">Twin Parenthood Leave</field>
+            <field name="request_unit">day</field>
+            <field name="allocation_type">fixed</field>
+            <field name="leave_validation_type">both</field>
+            <field name="leave_notif_subtype_id">1</field>
+            <field name="allocation_notif_subtype_id">1</field>
+            <field name="create_calendar_meeting">True</field>
+            <field name="color_name">lightblue</field>
+        </record>
+
+
+        <record id="holiday_haj" model="hr.leave.type">
+            <field name="name">Haj Leave</field>
+            <field name="request_unit">day</field>
+            <field name="allocation_type">fixed</field>
+            <field name="leave_validation_type">both</field>
+            <field name="leave_notif_subtype_id">1</field>
+            <field name="allocation_notif_subtype_id">1</field>
+            <field name="create_calendar_meeting">True</field>
+            <field name="color_name">lightblue</field>
+        </record>
+        <record id="holiday_unpaid" model="hr.leave.type">
+            <field name="name">Unpaid Leave</field>
+            <field name="request_unit">day</field>
+            <field name="allocation_type">fixed</field>
+            <field name="leave_validation_type">both</field>
+            <field name="leave_notif_subtype_id">1</field>
+            <field name="allocation_notif_subtype_id">1</field>
+            <field name="create_calendar_meeting">True</field>
+            <field name="color_name">lightblue</field>
+        </record>
+        <record id="holiday_excpetional" model="hr.leave.type">
+            <field name="name">Exceptional Leave</field>
+            <field name="request_unit">day</field>
+            <field name="allocation_type">fixed</field>
+            <field name="leave_validation_type">both</field>
+            <field name="leave_notif_subtype_id">1</field>
+            <field name="allocation_notif_subtype_id">1</field>
+            <field name="create_calendar_meeting">True</field>
+            <field name="color_name">lightblue</field>
+        </record>
+
+    </data>
+</odoo>

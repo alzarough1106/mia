@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# LOZA LTD CONFIDENTIAL
+# __________________
+#
+#  [2020] - [2021] Loza Limited - Tripoli Libya
+#  All Rights Reserved.
+#
+# NOTICE:  All information contained herein is, and remains
+# the property of Loza Limited and its suppliers,
+# if any.  The intellectual and technical concepts contained
+# herein are proprietary to Loza Limited
+# and its suppliers and may be covered by International Laws and Patents,
+# patents in process, and are protected by trade secret or copyright law.
+# Dissemination of this information or reproduction of this material
+# is strictly forbidden unless prior written permission is obtained
+# from Loza Limited
+-->
+<odoo>
+    <data>
+        <record id="activity_type_loza_update_holidays" model="mail.activity.type">
+            <field name="name">activity_type_holiday_allocation</field>
+            <field name="decoration_type">warning</field>
+            <field name="default_user_id">2</field>
+            <field name="res_model_id" ref="hr.model_hr_employee"/>
+            <field name="icon">fa-phone</field>
+            <field name="delay_count">5</field>
+        </record>
+        <record id="activity_type_loza_contract_expire_soon" model="mail.activity.type">
+            <field name="name">activity_type_contract_update</field>
+            <field name="decoration_type">warning</field>
+            <field name="default_user_id">2</field>
+            <field name="res_model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="icon">fa-phone</field>
+            <field name="delay_count">5</field>
+        </record>
+        <record id="activity_type_loza_employment_degree_update" model="mail.activity.type">
+            <field name="name">activity_type_employment_degree_update</field>
+            <field name="decoration_type">warning</field>
+            <field name="default_user_id">2</field>
+            <field name="res_model_id" ref="hr.model_hr_employee"/>
+            <field name="icon">fa-phone</field>
+            <field name="delay_count">5</field>
+        </record>
+    </data>
+</odoo>

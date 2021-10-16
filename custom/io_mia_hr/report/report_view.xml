@@ -1,0 +1,11 @@
+?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="report_print_lab_result_demo" model="ir.actions.report">
+        <field name="name">Lab Record</field>
+        <field name="model">loza.lab</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">loza_labs.lab_result_demo</field>
+        <field name="report_file">loza_labs.lab_result_demo</field>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

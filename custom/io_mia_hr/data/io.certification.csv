@@ -1,0 +1,11 @@
+id,code,name
+io_cert_1,master,ماجستير
+io_cert_2,phd,دكتوراة
+io_cert_3,bachelor,بكالوريس
+io_cert_4,diploma,دبلوم
+io_cert_5,high_deploma,دبلوم عالي
+io_cert_6,secondary,ثانوية عامة
+io_cert_7,inter_diploma,دبلوم متوسط
+io_cert_8,lisance,ليسانس
+io_cert_9,admin_high_diploma,دبلوم إدارة أعمال عالي
+io_cert_10,first_aid_diploma,دورة اسعافات أولية

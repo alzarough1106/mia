@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <record id="hr_employee_search_inherit_form_io" model="ir.ui.view">
+            <field name="name">hr.employee.search.inherit.form.io</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_filter" />
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='inactive']" position="after">
+                            <filter name="emp_filter" string="Employee" domain="[('contractor','=',False)]" help="Show permenants"/>
+                            <filter name="cont_filter" string="Contractor" domain="[('contractor','=',True)]" help="Show contractors"/>
+                            <filter name="cont_filter" string="Transferred" domain="[('transferred','=',True)]" help="Show Transferred People"/>
+                </xpath>
+           </field>
+        </record>
+
+        <record id="hr_employee_inherit_form_view" model="ir.ui.view">
+            <field name="name">hr.employee.inherit.form.io</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='work_email']" position="after">
+                     <field name="employee_no"/>
+                     <field name="person_id"/>
+                     <field name="date_work_start"/>
+                     <field name="employment_degree"/>
+                     <field name="employment_degree_update_date"/>
+                     <field name="employment_degree_yearly_update_date"/>
+                     <field name="current_emp_degree_years"/>
+                     <field name="contractor"/>
+                     <field name="transferred"/>
+              </xpath>
+                <xpath expr="//page[@name='hr_settings']" position="after">
+                            <page name="hr_degrees_history" string="Employment Degree History" groups="hr.group_hr_user">
+                                <group>
+                                        <field name="employment_degree_history" string="Employment Degree History"/>
+                                </group>
+                            </page>
+                            <page name="hr_penalty" string="Penalties" groups="hr.group_hr_user">
+                                <group>
+                                        <field name="hr_penalties" string="Penalities"/>
+                                </group>
+                            </page>
+                </xpath>
+                <xpath expr="//field[@name='marital']" position="after">
+                     <field name="has_dependents"/>
+              </xpath>
+                <xpath expr="//field[@name='children']" position="before">
+                     <field name="no_of_wives"/>
+              </xpath>
+                <xpath expr="//field[@name='country_id']" position="after">
+                     <field name="national_id"/>
+              </xpath>
+                <xpath expr="//field[@name='certificate']" position="replace">
+                     <field name="certification"/>
+              </xpath>
+            </field>
+        </record>
+</odoo>
+

@@ -1,0 +1,842 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* io_mia_hr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-16 08:28+0000\n"
+"PO-Revision-Date: 2021-08-16 08:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: io_mia_hr
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.hr_contract_search_inherit_form_io
+msgid "About to Expire"
+msgstr "على وشك الإنتهاء"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_attendance__status__absent
+msgid "Absent"
+msgstr "غائب"
+
+#. module: io_mia_hr
+#: model:res.groups,name:io_mia_hr.group_mia_administration
+msgid "Administration"
+msgstr "إدارة"
+
+#. module: io_mia_hr
+#: code:addons/io_mia_hr/model/hr_employee.py:0
+#, python-format
+msgid "Administration High Diploma"
+msgstr "دبلوم إدارة أعمال عالي"
+
+#. module: io_mia_hr
+#: model:res.groups,comment:io_mia_hr.group_mia_administration
+msgid "Administrator Access Rights in MIA"
+msgstr "صلاحيات الإدارة التامة للموارد البشرية"
+
+#. module: io_mia_hr
+#: model:ir.model,name:io_mia_hr.model_hr_attendance
+msgid "Attendance"
+msgstr "الحضور"
+
+#. module: io_mia_hr
+#: model:res.groups,comment:io_mia_hr.group_mia_attendance
+msgid "Attendance Access Rights in MIA"
+msgstr "صلاحيات موظفي الحضور"
+
+#. module: io_mia_hr
+#: model:res.groups,comment:io_mia_hr.group_mia_attendance_admin
+msgid "Attendance Admin Access Rights in MIA"
+msgstr "صلاحيات إدارة الحضور"
+
+#. module: io_mia_hr
+#: model:res.groups,name:io_mia_hr.group_mia_attendance_admin
+msgid "Attendance Admin Team"
+msgstr "فريق إدارة الحضور"
+
+#. module: io_mia_hr
+#: model:res.groups,name:io_mia_hr.group_mia_attendance
+msgid "Attendance Team"
+msgstr "فريق الحضور"
+
+#. module: io_mia_hr
+#: code:addons/io_mia_hr/model/hr_employee.py:0
+#, python-format
+msgid "Bachelore"
+msgstr "بكالوريس"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_employee__certificate
+msgid "Certificate"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_contract__contract_type__classified
+msgid "Classified Contract"
+msgstr "عقد مصنف"
+
+#. module: io_mia_hr
+#: model:ir.model,name:io_mia_hr.model_res_company
+msgid "Companies"
+msgstr "شركات"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_loza_employee_transfer__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: io_mia_hr
+#: model:ir.model,name:io_mia_hr.model_hr_contract
+msgid "Contract"
+msgstr "العقد"
+
+#. module: io_mia_hr
+#: model:res.groups,comment:io_mia_hr.group_mia_contracts
+msgid "Contract Access Rights in MIA"
+msgstr "صلاحيات موظفي العقود"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_contract__contract_type
+msgid "Contract Type"
+msgstr "نوع العقد"
+
+#. module: io_mia_hr
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.hr_employee_search_inherit_form_io
+msgid "Contractor"
+msgstr "متعاقد"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_contract__contract_type__contractor
+msgid "Contractor Contract"
+msgstr "عقد متعاون"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_employee__contractor
+msgid "Contractor?"
+msgstr "متعاقد؟"
+
+#. module: io_mia_hr
+#: model:res.groups,name:io_mia_hr.group_mia_contracts
+msgid "Contracts"
+msgstr "العقود"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_employment_degree__create_uid
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_exit_permissions__create_uid
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_penalty__create_uid
+#: model:ir.model.fields,field_description:io_mia_hr.field_loza_employee_transfer__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_employment_degree__create_date
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_exit_permissions__create_date
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_penalty__create_date
+#: model:ir.model.fields,field_description:io_mia_hr.field_loza_employee_transfer__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_exit_permissions__exit_dt
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_employee__date_work_start
+msgid "Date Start of Work"
+msgstr "تاريخ بدء العمل"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_employment_degree__degree_end_date
+msgid "Degree End Date"
+msgstr "تاريخ نهاية الدرجة"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_employment_degree__degree_start_date
+msgid "Degree Start Date"
+msgstr "تاريخ بداية الدرجة"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_loza_employee_transfer__department_id
+msgid "Department"
+msgstr "القسم"
+
+#. module: io_mia_hr
+#: code:addons/io_mia_hr/model/hr_employee.py:0
+#, python-format
+msgid "Diploma"
+msgstr "دبلوم"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_attendance__display_name
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_contract__display_name
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_employment_degree__display_name
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_exit_permissions__display_name
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_penalty__display_name
+#: model:ir.model.fields,field_description:io_mia_hr.field_loza_employee_transfer__display_name
+#: model:ir.model.fields,field_description:io_mia_hr.field_res_company__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__loza_employee_transfer__state__done
+msgid "Done"
+msgstr "أكتمل"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__8
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__8
+msgid "Eight Degree"
+msgstr "درجة ثامنة"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__18
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__18
+msgid "Eighteenth Degree"
+msgstr "درجة ثامنة عشر"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__11
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__11
+msgid "Eleventh Degree"
+msgstr "درجة حادية عشر"
+
+#. module: io_mia_hr
+#: model:hr.leave.type,name:io_mia_hr.holiday_emergency_leave
+msgid "Emergency Leave"
+msgstr "إجازة طارئة"
+
+#. module: io_mia_hr
+#: model:ir.model,name:io_mia_hr.model_hr_employee
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_employment_degree__employee_id
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_exit_permissions__employee_id
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_penalty__employee_id
+#: model:ir.model.fields,field_description:io_mia_hr.field_loza_employee_transfer__employee_id
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.hr_employee_search_inherit_form_io
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_employee__employee_no
+msgid "Employee No"
+msgstr "الرقم الوظيفي"
+
+#. module: io_mia_hr
+#: model:ir.actions.act_window,name:io_mia_hr.action_transfer_process
+#: model:ir.ui.menu,name:io_mia_hr.menu_loza_hr_employee_process
+#: model:ir.ui.menu,name:io_mia_hr.menu_loza_hr_employee_transfer
+msgid "Employee Transfer"
+msgstr "إنتقال موظف"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_employee__employment_degree
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_employment_degree__employment_degree
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.io_employment_degree_form_io
+msgid "Employment Degree"
+msgstr "الدرجة الوظيفية"
+
+#. module: io_mia_hr
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.hr_employee_inherit_form_io
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.io_employment_degree_tree_io
+msgid "Employment Degree History"
+msgstr "تاريخ الدرجة الوظيفية"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_employee__employment_degree_history
+msgid "Employment Degrees History"
+msgstr "تاريخ الدرجة الوظيفية"
+
+#. module: io_mia_hr
+#: model:hr.leave.type,name:io_mia_hr.holiday_excpetional
+msgid "Exceptional Leave"
+msgstr "إجازة أستثنائية"
+
+#. module: io_mia_hr
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.hr_contract_search_inherit_form_io
+msgid "Expired"
+msgstr "عقد منتهي"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__15
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__15
+msgid "Fifteenth Degree"
+msgstr "درجة خامسة عشر"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__5
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__5
+msgid "Fifth Degree"
+msgstr "درجة خامسة"
+
+#. module: io_mia_hr
+#: code:addons/io_mia_hr/model/hr_employee.py:0
+#, python-format
+msgid "First Aid Diploma"
+msgstr "دورة اسعافات أولية"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__1
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__1
+msgid "First Degree"
+msgstr "درجة أولى"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__14
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__14
+msgid "Fourteenth Degree"
+msgstr "درجة رابعة عشر"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__4
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__4
+msgid "Fourth Degree"
+msgstr "درجة رابعة"
+
+#. module: io_mia_hr
+#: model:res.groups,comment:io_mia_hr.group_mia_hr
+msgid "HR Employee Access Rights in MIA"
+msgstr "صلاحيات موظفي الموارد البشرية"
+
+#. module: io_mia_hr
+#: model:hr.leave.type,name:io_mia_hr.holiday_haj
+msgid "Haj Leave"
+msgstr "إجازة حج"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_employee__has_dependents
+msgid "Has Dependants?"
+msgstr "يعول؟"
+
+#. module: io_mia_hr
+#: model:ir.module.category,description:io_mia_hr.module_category_mia
+msgid "Helps you handle your MIA-related Access Rights"
+msgstr ""
+
+#. module: io_mia_hr
+#: code:addons/io_mia_hr/model/hr_employee.py:0
+#, python-format
+msgid "High Diploma"
+msgstr "دبلوم عالي"
+
+#. module: io_mia_hr
+#: model:res.groups,name:io_mia_hr.group_mia_hr
+msgid "Human Resources Team"
+msgstr "الموارد البشرية"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_attendance__id
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_contract__id
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_employee__id
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_employment_degree__id
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_exit_permissions__id
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_penalty__id
+#: model:ir.model.fields,field_description:io_mia_hr.field_loza_employee_transfer__id
+#: model:ir.model.fields,field_description:io_mia_hr.field_res_company__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: io_mia_hr
+#: code:addons/io_mia_hr/model/hr_employee.py:0
+#, python-format
+msgid "Intermediate Diploma"
+msgstr "دبلوم متوسط"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_loza_employee_transfer__job_id
+msgid "Job Position"
+msgstr "المنصب الوظيفي"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_attendance____last_update
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_contract____last_update
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_employment_degree____last_update
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_exit_permissions____last_update
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_penalty____last_update
+#: model:ir.model.fields,field_description:io_mia_hr.field_loza_employee_transfer____last_update
+#: model:ir.model.fields,field_description:io_mia_hr.field_res_company____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_employment_degree__write_uid
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_exit_permissions__write_uid
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_penalty__write_uid
+#: model:ir.model.fields,field_description:io_mia_hr.field_loza_employee_transfer__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_employment_degree__write_date
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_exit_permissions__write_date
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_penalty__write_date
+#: model:ir.model.fields,field_description:io_mia_hr.field_loza_employee_transfer__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_attendance__status__late
+msgid "Late"
+msgstr "متأخر"
+
+#. module: io_mia_hr
+#: code:addons/io_mia_hr/model/hr_employee.py:0
+#, python-format
+msgid "Licance"
+msgstr "ليسانس"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_contract__contract_type__marketing
+msgid "Marketing Contract"
+msgstr "عقد تسويقي"
+
+#. module: io_mia_hr
+#: model:hr.leave.type,name:io_mia_hr.holiday_marriage
+msgid "Marriage Leave"
+msgstr "إجازة زواج"
+
+#. module: io_mia_hr
+#: code:addons/io_mia_hr/model/hr_employee.py:0
+#, python-format
+msgid "Master Degree"
+msgstr "ماجستير"
+
+#. module: io_mia_hr
+#: model:ir.module.category,name:io_mia_hr.module_category_mia
+msgid "Mia Access HR Groups"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_penalty__name
+msgid "Name"
+msgstr "الإسم"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_employee__national_id
+msgid "National ID"
+msgstr "الرقم الوطني"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_employee__employment_degree_update_date
+msgid "Next Degree Date"
+msgstr "تاريخ ترقية الدرجة"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__19
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__19
+msgid "Nineteenth Degree"
+msgstr "درجة تاسعة عشر"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__9
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__9
+msgid "Ninth Degree"
+msgstr "درجة تاسعة"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_employee__no_of_wives
+msgid "No of Wives"
+msgstr "عدد الزوجات"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_penalty__notes
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: io_mia_hr
+#: code:addons/io_mia_hr/model/hr_employee.py:0
+#, python-format
+msgid "PH.D"
+msgstr "دكتوراة"
+
+#. module: io_mia_hr
+#: model:hr.leave.type,name:io_mia_hr.holiday_parenting
+msgid "Parenthood Leave"
+msgstr "إجازة أبوة"
+
+#. module: io_mia_hr
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.hr_employee_inherit_form_io
+msgid "Penalities"
+msgstr "الجزاءات"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_employee__hr_penalties
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.hr_employee_inherit_form_io
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.io_penalty_tree_io
+msgid "Penalties"
+msgstr "الجزاءات"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_penalty__date
+msgid "Penalty Date"
+msgstr "تاريخ العقوبة"
+
+#. module: io_mia_hr
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.io_penalty_form_io
+msgid "Penalty History"
+msgstr "قائمة الجزاءات"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_penalty__points
+msgid "Points"
+msgstr "نقاط الخصم"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_attendance__status__present
+msgid "Present"
+msgstr "حضور"
+
+#. module: io_mia_hr
+#: model:res.groups,comment:io_mia_hr.group_mia_null
+msgid "Reset"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:res.groups,name:io_mia_hr.group_mia_null
+msgid "Reset User"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__2
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__2
+msgid "Second Degree"
+msgstr "درجة ثانية"
+
+#. module: io_mia_hr
+#: code:addons/io_mia_hr/model/hr_employee.py:0
+#, python-format
+msgid "Secondary School"
+msgstr "ثانوية عامة"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_contract__contract_type__service
+msgid "Service Contract"
+msgstr "عقد خدمي"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__17
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__17
+msgid "Seventeenth Degree"
+msgstr "درجة سابعة عشر"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__7
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__7
+msgid "Seventh Degree"
+msgstr "درجة سابعة"
+
+#. module: io_mia_hr
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.hr_employee_search_inherit_form_io
+msgid "Show Transferred People"
+msgstr "عرض الموظفين المنتقلين"
+
+#. module: io_mia_hr
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.hr_employee_search_inherit_form_io
+msgid "Show contractors"
+msgstr "عرض المتعاقدين"
+
+#. module: io_mia_hr
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.hr_contract_search_inherit_form_io
+msgid "Show contracts about to be expired in the next 30 days"
+msgstr "عرض العقود التي ستنتهي قريبا وخلال الثلاثون يوما القادمة"
+
+#. module: io_mia_hr
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.hr_contract_search_inherit_form_io
+msgid "Show contracts that are expired"
+msgstr "عرض العقود التي أنتهت"
+
+#. module: io_mia_hr
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.hr_employee_search_inherit_form_io
+msgid "Show permenants"
+msgstr "عرض الموظفين الدائمين"
+
+#. module: io_mia_hr
+#: model:hr.leave.type,name:io_mia_hr.holiday_sick_leave
+msgid "Sick Leave Timeoff"
+msgstr "إجازة مرضية"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__16
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__16
+msgid "Sixteenth Degree"
+msgstr "درجة سادسة عشر"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__6
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__6
+msgid "Sixth Degree"
+msgstr "درجة سادسة"
+
+#. module: io_mia_hr
+#: model:hr.leave.type,name:io_mia_hr.holiday_standard_long
+msgid "Standard Long Yearly Leave"
+msgstr "إجازة سنوية طويلة"
+
+#. module: io_mia_hr
+#: model:hr.leave.type,name:io_mia_hr.holiday_standard
+msgid "Standard Yearly Leave"
+msgstr "إجازة سنوية عادية"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_attendance__status
+#: model:ir.model.fields,field_description:io_mia_hr.field_loza_employee_transfer__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__10
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__10
+msgid "Tenth Degree"
+msgstr "درجة عاشرة"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,help:io_mia_hr.field_io_penalty__employee_id
+#: model:ir.model.fields,help:io_mia_hr.field_loza_employee_transfer__employee_id
+msgid "The Employee who did the penalty"
+msgstr "الموظف الذي خالف"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,help:io_mia_hr.field_io_exit_permissions__employee_id
+msgid "The Employee who has exit permissions"
+msgstr "الموظف الذي عنده إذن خروج"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,help:io_mia_hr.field_io_employment_degree__employee_id
+msgid "The Employee with the current history"
+msgstr "الموظف صاحب التاريخ"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,help:io_mia_hr.field_loza_employee_transfer__department_id
+msgid "The department which employee has moved to"
+msgstr "القسم الذي سينتقل إليه الموظف"
+
+#. module: io_mia_hr
+#: model:ir.model,name:io_mia_hr.model_io_exit_permissions
+msgid "The exit permission of an employee"
+msgstr "إذن خروج موظف"
+
+#. module: io_mia_hr
+#: model:ir.model,name:io_mia_hr.model_io_employment_degree
+msgid "The history of an employment degree for an employee"
+msgstr "تاريخ الدرجة الوظيفية"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,help:io_mia_hr.field_loza_employee_transfer__job_id
+msgid "The new position which employee has moved to"
+msgstr "المنصب الوظيفي الجديد الذي إنتقل إليه الموظف"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__3
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__3
+msgid "Third Degree"
+msgstr "درجة ثالثة"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__13
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__13
+msgid "Thirteenth Degree"
+msgstr "درجة ثالثة عشر"
+
+#. module: io_mia_hr
+#: model:res.groups,comment:io_mia_hr.group_mia_timeoff
+msgid "Timeoff Access Rights in MIA"
+msgstr "صلاحيات موظف الإجازات في الهيئة"
+
+#. module: io_mia_hr
+#: model:res.groups,comment:io_mia_hr.group_mia_timeoff_admin
+msgid "Timeoff Admin Access Rights in MIA"
+msgstr "صلاحيات إدارة الإجازات في الهيئة"
+
+#. module: io_mia_hr
+#: model:res.groups,name:io_mia_hr.group_mia_timeoff_admin
+msgid "Timeoff Admin Team"
+msgstr "فريق إدارة الإجازات"
+
+#. module: io_mia_hr
+#: model:res.groups,name:io_mia_hr.group_mia_timeoff
+msgid "Timeoff Team"
+msgstr "فريق الإجازات"
+
+#. module: io_mia_hr
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.io_penalty_tree_io
+msgid "Total Points"
+msgstr "مجموع نقاط الخصم"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_contract__contract_type__transfer
+msgid "Transfer Contract"
+msgstr "عقد انتداب"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_loza_employee_transfer__date
+msgid "Transfer Date"
+msgstr "تاريخ النقل"
+
+#. module: io_mia_hr
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.loza_employee_transfer_form_view
+msgid "Transfer Details"
+msgstr "تفاصيل النقل"
+
+#. module: io_mia_hr
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.hr_employee_search_inherit_form_io
+msgid "Transferred"
+msgstr "إنتقال خارجي"
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_hr_employee__transferred
+msgid "Transferred??"
+msgstr "إنتقال خارجي؟"
+
+#. module: io_mia_hr
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.loza_employee_transfer_tree_view
+msgid "Transfers"
+msgstr "الإنتقالات"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__12
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__12
+msgid "Twelfth Degree"
+msgstr "درجة ثانية عشر"
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__employment_degree__20
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__io_employment_degree__employment_degree__20
+msgid "Twentieth Degree"
+msgstr "درجة عشرون"
+
+#. module: io_mia_hr
+#: model:hr.leave.type,name:io_mia_hr.holiday_twin_parenting
+msgid "Twin Parenthood Leave"
+msgstr "إجازة وضع توأم"
+
+#. module: io_mia_hr
+#: model:hr.leave.type,name:io_mia_hr.holiday_unpaid
+msgid "Unpaid Leave"
+msgstr "إجازة بدون مرتب"
+
+#. module: io_mia_hr
+#: model:ir.actions.server,name:io_mia_hr.ir_cron_update_attendance_state_ir_actions_server
+#: model:ir.cron,cron_name:io_mia_hr.ir_cron_update_attendance_state
+#: model:ir.cron,name:io_mia_hr.ir_cron_update_attendance_state
+msgid "Update Attendance"
+msgstr "تحديث الحضور"
+
+#. module: io_mia_hr
+#: model:ir.actions.server,name:io_mia_hr.ir_cron_update_holiday_allocations_ir_actions_server
+#: model:ir.cron,cron_name:io_mia_hr.ir_cron_update_holiday_allocations
+#: model:ir.cron,name:io_mia_hr.ir_cron_update_holiday_allocations
+msgid "Update Holidays"
+msgstr "تحديث الإجازات"
+
+#. module: io_mia_hr
+#: model:ir.actions.server,name:io_mia_hr.ir_cron_warn_expire_contract_ir_actions_server
+#: model:ir.cron,cron_name:io_mia_hr.ir_cron_warn_expire_contract
+#: model:ir.cron,name:io_mia_hr.ir_cron_warn_expire_contract
+msgid "Warn About Contract Expiry"
+msgstr "تحذير للعقود المنتهية قريبا"
+
+#. module: io_mia_hr
+#: model:ir.model,name:io_mia_hr.model_io_penalty
+msgid "a penalty on an employee"
+msgstr "جزاء وقع على موظف"
+
+#. module: io_mia_hr
+#: model:ir.model,name:io_mia_hr.model_loza_employee_transfer
+msgid "a transfer of an employee"
+msgstr "إنتقاله داخلية لموظف"
+
+#. module: io_mia_hr
+#: model:mail.activity.type,name:io_mia_hr.activity_type_loza_contract_expire_soon
+msgid "activity_type_contract_update"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:mail.activity.type,name:io_mia_hr.activity_type_loza_update_holidays
+msgid "activity_type_holiday_allocation"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:ir.model.fields,field_description:io_mia_hr.field_io_exit_permissions__exit_id
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.io_exit_permissions_form_io
+msgid "أذن الخروج"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:ir.actions.act_window,name:io_mia_hr.action_exit_permissions
+#: model:ir.ui.menu,name:io_mia_hr.menu_action_exit_permissions
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.io_exit_permissions_tree_io
+msgid "أذونات الخروج"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:ir.ui.menu,name:io_mia_hr.menu_exit_permission
+msgid "الأذونات"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__certificate__bachelor
+msgid "بكالوريس"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__certificate__secondary
+msgid "ثانوية عامة"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__certificate__diploma
+msgid "دبلوم"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__certificate__admin_high_diploma
+msgid "دبلوم إدارة أعمال عالي"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__certificate__high_deploma
+msgid "دبلوم عالي"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__certificate__inter_diploma
+msgid "دبلوم متوسط"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__certificate__phd
+msgid "دكتوراة"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__certificate__first_aid_diploma
+msgid "دورة اسعافات أولية"
+msgstr ""
+
+#. module: io_mia_hr
+#: model_terms:ir.ui.view,arch_db:io_mia_hr.loza_employee_transfer_form_view
+msgid "قبول"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__certificate__lisance
+msgid "ليسانس"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__hr_employee__certificate__master
+msgid "ماجستير"
+msgstr ""
+
+#. module: io_mia_hr
+#: model:ir.model.fields.selection,name:io_mia_hr.selection__loza_employee_transfer__state__draft
+msgid "مسودة"
+msgstr ""

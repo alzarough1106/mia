@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# LOZA LTD CONFIDENTIAL
+# __________________
+#
+#  [2020] - [2021] Loza Limited - Tripoli Libya
+#  All Rights Reserved.
+#
+# NOTICE:  All information contained herein is, and remains
+# the property of Loza Limited and its suppliers,
+# if any.  The intellectual and technical concepts contained
+# herein are proprietary to Loza Limited
+# and its suppliers and may be covered by International Laws and Patents,
+# patents in process, and are protected by trade secret or copyright law.
+# Dissemination of this information or reproduction of this material
+# is strictly forbidden unless prior written permission is obtained
+# from Loza Limited
+-->
+<odoo>
+    <data>
+        <record id="ir_cron_update_current_degree_years" model="ir.cron">
+            <field name="name">Update Employment Degree Years</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="(DateTime.now().replace(hour=3, minute=0) + timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')" />
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_hr_employee"/>
+            <field name="code">model.update_current_emp_degree_years()</field>
+            <field name="state">code</field>
+        </record>
+        <record id="ir_cron_update_holiday_allocations" model="ir.cron">
+            <field name="name">Update Holidays</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="(DateTime.now().replace(hour=2, minute=0) + timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')" />
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_hr_employee"/>
+            <field name="code">model.update_holiday_allocations()</field>
+            <field name="state">code</field>
+        </record>
+        <record id="ir_cron_warn_expire_contract" model="ir.cron">
+            <field name="name">Warn About Contract Expiry</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="(DateTime.now().replace(hour=2, minute=0) + timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')" />
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_hr_contract"/>
+            <field name="code">model.update_state()</field>
+            <field name="state">code</field>
+        </record>
+        <record id="ir_cron_update_attendance_state" model="ir.cron">
+            <field name="name">Update Attendance</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="(DateTime.now().replace(hour=1, minute=0) + timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')" />
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_hr_attendance"/>
+            <field name="code">model.update_todays_attendance()</field>
+            <field name="state">code</field>
+        </record>
+    </data>
+</odoo>

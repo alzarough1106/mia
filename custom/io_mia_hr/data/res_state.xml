@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="io_mia_ly_res_state_HA" model="res.country.state">
+            <field name="name">بلدية حي الأندلس</field>
+            <field name="code">ب.ح.س</field>
+            <field name="country_id" ref="base.ly"/>
+        </record>
+        <record id="io_mia_ly_res_state_TM" model="res.country.state">
+            <field name="name">بلدية طرابلس المركز</field>
+            <field name="code">ب.ط.م</field>
+            <field name="country_id" ref="base.ly"/>
+        </record>
+        <record id="io_mia_ly_res_state_BC" model="res.country.state">
+            <field name="name">بلدية أبوسليم</field>
+            <field name="code">ب.ب.س</field>
+            <field name="country_id" ref="base.ly"/>
+        </record>
+        <record id="io_mia_ly_res_state_EZ" model="res.country.state">
+            <field name="name">بلدية عين زارة</field>
+            <field name="code">ب.ع.ز</field>
+            <field name="country_id" ref="base.ly"/>
+        </record>
+        <record id="io_mia_ly_res_state_SJ" model="res.country.state">
+            <field name="name">بلدية سوق الجمعة</field>
+            <field name="code">ب.س.ج</field>
+            <field name="country_id" ref="base.ly"/>
+        </record>
+    </data>
+</odoo>

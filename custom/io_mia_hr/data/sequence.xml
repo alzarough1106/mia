@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="io_exit_permissions_sequence" model="ir.sequence">
+            <field name="name">Exit Permission</field>
+            <field name="code">io.exit.permissions</field>
+            <field name="prefix">إ.خ/</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+    </data>
+</odoo>
