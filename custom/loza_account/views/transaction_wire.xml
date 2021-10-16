@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="transaction_wire_tree_view" model="ir.ui.view">
+        <field name="name">transaction.wire.tree.view</field>
+        <field name="model">transaction.wire</field>
+        <field name="arch" type="xml">
+            <tree string="Wire Transactions">
+                <field name="wire_id"/>
+                <field name="description"/>
+                <field name="amount"/>
+                <field name="currency_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+    <record id="transaction_wire_form_view" model="ir.ui.view">
+         <field name="name">transaction.wire.form.view</field>
+        <field name="model">transaction.wire</field>
+        <field name="arch" type="xml">
+            <form string="Wire Transaction Details">
+                <sheet>
+                    <div>
+                            <label class="oe_edit_only" for="wire_id"
+                                   string="Wire Transaction ID #"/>
+                            <h1>
+                                <field name="wire_id" class="oe_inline"/>
+                            </h1>
+                    </div>
+                    <group>
+                        <group string="Details">
+                            <field name="state" invisible="1"/>
+                            <field name="description" attrs="{'readonly': [ ('state', '!=', 'open')]}"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="amount" attrs="{'readonly': [ ('state', '!=', 'open')]}"/>
+                        </group>
+                        <group string="From bank">
+                            <field name="from_bank_account" attrs="{'readonly': [ ('state', '!=', 'open')]}"/>
+                            <field name="from_bank_name" attrs="{'readonly': [ ('state', '!=', 'open')]}"/>
+                        </group>
+                        <group string="To bank">
+                            <field name="to_bank_account" attrs="{'readonly': [ ('state', '!=', 'open')]}"/>
+                            <field name="to_bank_name" attrs="{'readonly': [ ('state', '!=', 'open')]}"/>
+                        </group>
+                          <group string="Accounts">
+                            <field name="credit_account_id" attrs="{'readonly': [ ('state', '=', 'locked')]}"/>
+                            <field name="debit_account_id" attrs="{'readonly': [ ('state', '=', 'locked')]}"/>
+                        </group>
+                  </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

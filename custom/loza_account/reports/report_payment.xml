@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- REPORT FOR CASH SARAF -->
+    <template id="report_payment_call">
+        <t t-call="web.external_layout" t-value="o.with_context(lang=lang)">
+            <div class="page" dir="rtl">
+
+                <h1 align="center">شركة الفياح القابضة
+                </h1>
+
+<!--                <h2 align="center"> صندوق الرعاية الإجتماعية-->
+<!--                </h2>-->
+
+                <h3 style="margin-top: 30px;" align="center">
+                        سند صرف خزينة
+                </h3>
+                                     <p style="height: 20px;"></p>
+                   <table class="table table-borderless m-0">
+                        <tbody>
+                            <tr>
+                                <td class="pl-0 pr-0">
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <td class="p-0 w-25" align="left" style="margin: 5px;">
+                                                إذن صرف:
+                                            </td>
+                                            <td class="p-0 w-75" align="right">
+                                                <span class="d-block font-weight-bold" t-field="o.saraf_id"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-0 w-25" align="left" style="margin: 5px;">
+                                                النوع :
+                                            </td>
+                                            <td class="p-0 w-75" align="right">
+                                                <span class="d-block font-weight-bold">نقدي</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-0 w-25" align="left" style="margin: 5px;">
+                                                تاريخ الدفع :
+                                            </td>
+                                            <td class="p-0 w-75" align="right">
+                                                <span class="d-block font-weight-bold" t-field="o.payment_date"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                                    <p style="height: 20px;"></p>
+                <div align="right" t-if="o.saraf_type=='cash'">
+                    <table class="table table-lg m-0 p-0 table-borderless border border-right-0 border-left-0 border-info">
+                        <tbody>
+                            <tr>
+                                <td class="pt-0 pb-0 pl-0 pr-0">
+                                    <table class="table table-borderless m-0 p-0">
+                                        <tr>
+                                            <td class="p-0 w-10">
+                                                   <span class="font-weight-bold">
+                                                رقم
+                                                </span>
+                                            </td>
+                                            <td class="p-0 w-15">
+                                                <span class="font-weight-bold">
+                                                مدين
+                                                </span>
+                                            </td>
+                                            <td class="p-0 w-25">
+                                                <span class="font-weight-bold">
+                                                الحساب :
+                                                </span>
+                                            </td>
+                                            <td class="p-0 w-50">
+                                                <span class="font-weight-bold">
+                                                البيان :
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table table-borderless m-0">
+                        <tbody>
+                            <tr t-foreach="o.transaction_ids" t-as="line" class="pb-2">
+                                <td class="pl-0 pr-0">
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <td class="p-0 w-10" style="margin: 0px; padding: 0px;">
+                                                <span class="d-block" t-field="line.id"/>
+                                            </td>
+                                            <td class="p-0 w-15" style="margin: 0px; padding: 0px;">
+                                                <span class="d-block" t-field="line.amount"/>
+                                            </td>
+                                            <td class="p-0 w-25" align="right">
+<!--                                                <span class="d-block font-weight-bold" t-field="o.debit_account_id"/>-->
+                                            </td>
+                                            <td class="p-0 w-50" align="right">
+                                                <span class="d-block font-weight-bold" t-field="line.description"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-lg m-0 table-borderless border border-right-0 border-left-0 border-info">
+                        <tbody>
+                            <tr>
+                                <td class="pl-0 pr-0">
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <td class="p-0 w-10" align="left">
+                                            </td>
+                                            <td class="p-0 w-15" align="left">
+                                                    <span dir="rtl" class="d-block font-weight-bold"
+                                                          t-field="o.amount"/>
+                                            </td>
+                                            <td class="p-0 w-25" align="left">
+                                                <span class="d-block">
+                                                المجموع    :
+                                                </span>
+                                            </td>
+                                            <td class="p-0 w-75" align="right" dir="rtl" colspan="3">
+                                                    <span dir="rtl" class="d-block font-weight-bold"
+                                                          t-field="o.total_string"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                                    <p style="height: 20px;"></p>
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <td style="width: 33%;" align="right">
+                                                إعداد :<strong><span dir="rtl" class="d-block font-weight-bold" t-field="o.prepare_id"/></strong>
+                                            </td>
+                                            <td style="width: 33%;" align="right">
+                                              رئيس الشئوون المالية : <strong><span dir="rtl" class="d-block font-weight-bold" t-field="o.cfo_id"/></strong>
+                                            </td>
+                                            <td style="width: 34%;" align="right">
+                                                المراجعة الداخلية :<strong><span dir="rtl" class="d-block font-weight-bold" t-field="o.auditor_id"/></strong>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <p style="height: 20px;"></p>
+                                    <table class="table table-borderless" style="padding-top: 10px;">
+                                        <tr>
+                                            <td class="p-0 w-25">
+                                          أسم المستلم :
+                                            </td>
+                                            <td class="p-0 w-75" align="right">
+                                                <strong><span dir="rtl" class="d-block font-weight-bold" t-field="o.recepient_id"/></strong>
+                                            </td>
+                                        </tr>
+                                        <tr style="margin-top: 20px;padding-top: 20px;">
+                                            <td class="p-0 w-25" style="width: 33%;">
+ التوقيع :
+                                            </td>
+                                            <td class="p-0 w-75" align="right">
+                                                .......................
+                                              </td>
+                                        </tr>
+                                    </table>
+
+
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!--
+    ====
+    ====       REPORT ON SARAF WITH CHECK
+    ====
+    -->
+    <template id="report_payment_check_call">
+        <t t-call="web.external_layout" t-value="o.with_context(lang=lang)">
+            <div class="page" dir="rtl">
+
+                <h1 align="center">وزارة الداخلية
+                </h1>
+
+                <h2 align="center"> صندوق الرعاية الإجتماعية
+                </h2>
+
+                <h3 style="margin-top: 30px;" align="center">سند صرف <span class="d-block font-weight-bold" t-field="o.bank_account.bank_id.name"/>  <span class="d-block font-weight-bold" t-field="o.bank_account"/>
+                </h3>
+                                     <p style="height: 20px;"></p>
+                <h3 align="right">
+                    <strong>إذن صرف:
+                        <span t-field="o.saraf_id"/>
+                    </strong>
+                </h3>
+                   <table class="table table-borderless m-0">
+                        <tbody>
+                            <tr>
+                                <td class="pl-0 pr-0">
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <td class="p-0 w-25" align="left" style="margin: 5px;">
+                                                إذن صرف:
+                                            </td>
+                                            <td class="p-0 w-75" align="right">
+                                                <span class="d-block font-weight-bold" t-field="o.saraf_id"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-0 w-25" align="left" style="margin: 5px;">
+                                                النوع :
+                                            </td>
+                                            <td class="p-0 w-75" align="right">
+                                                <span class="d-block font-weight-bold">نقدي</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-0 w-25" align="left" style="margin: 5px;">
+                                                تاريخ الدفع :
+                                            </td>
+                                            <td class="p-0 w-75" align="right">
+                                                <span class="d-block font-weight-bold" t-field="o.payment_date"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-0 w-25" align="left" style="margin: 5px;">
+                                                أسم المصرف :
+                                            </td>
+                                            <td class="p-0 w-75" align="right">
+                                                <span class="d-block font-weight-bold" t-field="o.bank_account.bank_id.name"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-0 w-25" align="left" style="margin: 5px;">
+                                                رقم الحساب :
+                                            </td>
+                                            <td class="p-0 w-75" align="right">
+                                                <span class="d-block font-weight-bold" t-field="o.bank_account"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                                    <p style="height: 20px;"></p>
+
+                <div align="right" t-if="o.saraf_type=='check'">
+                    <table class="table table-lg m-0 p-0 table-borderless border border-right-0 border-left-0 border-info">
+                        <tbody>
+                            <tr>
+                                <td class="pt-0 pb-0 pl-0 pr-0">
+                                    <table class="table table-borderless m-0 p-0">
+                                        <tr>
+                                            <td class="p-0 w-10">
+                                                   <span class="font-weight-bold">
+                                                رقم الصك
+                                                </span>
+                                            </td>
+                                            <td class="p-0 w-15">
+                                                <span class="font-weight-bold">
+                                                مدين
+                                                </span>
+                                            </td>
+                                            <td class="p-0 w-25">
+                                                <span class="font-weight-bold">
+                                                الحساب
+                                                </span>
+                                            </td>
+                                            <td class="p-0 w-50">
+                                                <span class="font-weight-bold">
+                                                البيان
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table table-borderless m-0">
+                        <tbody>
+                            <tr t-foreach="o.check_ids" t-as="line" class="pb-2">
+                                <td class="pl-0 pr-0">
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <td class="p-0 w-10" style="margin: 0px; padding: 0px;">
+                                                <span class="d-block" t-field="line.check_no"/><br/>
+                                               أسم المستفيد :    <span class="d-block" t-field="line.pay_to"/>
+                                            </td>
+                                            <td class="p-0 w-15" style="margin: 0px; padding: 0px;">
+                                                <span class="d-block" t-field="line.amount"/>
+                                            </td>
+                                            <td class="p-0 w-25" align="right">
+<!--                                                <span class="d-block font-weight-bold" t-field="o.debit_account_id"/>-->
+                                            </td>
+                                            <td class="p-0 w-50" align="right">
+                                                <span class="d-block font-weight-bold" t-field="line.description"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-lg m-0 table-borderless border border-right-0 border-left-0 border-info">
+                        <tbody>
+                            <tr>
+                                <td class="pl-0 pr-0">
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <td class="p-0 w-10" align="left">
+                                            </td>
+                                            <td class="p-0 w-15" align="left">
+                                                    <span dir="rtl" class="d-block font-weight-bold"
+                                                          t-field="o.amount"/>
+                                            </td>
+                                            <td class="p-0 w-25" align="left">
+                                                <span class="d-block">
+                                                المجموع    :
+                                                </span>
+                                            </td>
+                                            <td class="p-0 w-75" align="right" dir="rtl" colspan="3">
+                                                    <span dir="rtl" class="d-block font-weight-bold"
+                                                          t-field="o.total_string"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                                    <p style="height: 20px;"></p>
+
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <td style="width: 33%;" align="right">
+                                                إعداد :<strong><span dir="rtl" class="d-block font-weight-bold" t-field="o.prepare_id"/></strong>
+                                            </td>
+                                            <td style="width: 33%;" align="right">
+                                              رئيس الشئوون المالية : <strong><span dir="rtl" class="d-block font-weight-bold" t-field="o.cfo_id"/></strong>
+                                            </td>
+                                            <td style="width: 34%;" align="right">
+                                                المراجعة الداخلية :<strong><span dir="rtl" class="d-block font-weight-bold" t-field="o.auditor_id"/></strong>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table class="table table-borderless">
+
+                                        <tr style="margin-top: 20px;padding-right: 30px;">
+                                            <td class="p-0" style="width: 50%;" align="center">
+                                              يعتمد أمين الصندوق : <strong><span dir="rtl" class="d-block font-weight-bold" t-field="o.auditor_id"/></strong>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <p style="height: 20px;"></p>
+                                    <table class="table table-borderless" style="padding-top: 10px;">
+                                        <tr>
+                                            <td class="p-0 w-25">
+                                          أسم المستلم :
+                                            </td>
+                                            <td class="p-0 w-75" align="right">
+                                                <strong><span dir="rtl" class="d-block font-weight-bold" t-field="o.recepient_id"/></strong>
+                                            </td>
+                                        </tr>
+                                        <tr style="margin-top: 20px;padding-top: 20px;">
+                                            <td class="p-0 w-25" style="width: 33%;">
+ التوقيع :
+                                            </td>
+                                            <td class="p-0 w-75" align="right">
+                                                .......................
+                                              </td>
+                                        </tr>
+                                    </table>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!--
+    ====
+    ====       REPORT ON SARAF WITH WIRE
+    ====
+    -->
+    <template id="report_payment_wire_call">
+        <t t-call="web.external_layout" t-value="o.with_context(lang=lang)">
+            <div class="page" dir="rtl">
+                <h3 align="right">
+                    <strong>إذن صرف:
+                        <span t-field="o.saraf_id"/>
+                    </strong>
+                </h3>
+                                     <p style="height: 20px;"></p>
+                   <table class="table table-borderless m-0">
+                        <tbody>
+                            <tr>
+                                <td class="pl-0 pr-0">
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <td class="p-0 w-25" align="left" style="margin: 5px;">
+                                                تاريخ المعاملة :
+                                            </td>
+                                            <td class="p-0 w-25" align="right">
+                                                <span class="d-block font-weight-bold" t-field="o.payment_date"/>
+                                            </td>
+                                            <td class="p-0 w-25" align="left" style="margin: 5px;">
+                                                النوع :
+                                            </td>
+                                            <td class="p-0 w-25" align="right">
+                                                <span class="d-block font-weight-bold">حوالة</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                                    <p style="height: 20px;"></p>
+                <div align="right" t-if="o.saraf_type=='wire'">
+                    <table class="table table-lg m-0 p-0 table-borderless border border-right-0 border-left-0 border-info">
+                        <tbody>
+                            <tr>
+                                <td class="pt-0 pb-0 pl-0 pr-0">
+                                    <table class="table table-borderless m-0 p-0">
+                                        <tr>
+                                            <td class="p-0 w-25">
+                                                <span class="font-weight-bold">
+                                                البيان
+                                                </span>
+                                            </td>
+                                            <td class="p-0 w-20">
+                                                <span class="font-weight-bold">
+                                                أسم المستفيد
+                                                </span>
+                                            </td>
+                                            <td class="p-0 w-15">
+                                                <span class="font-weight-bold">
+                                                القيمة
+                                                </span>
+                                            </td>
+                                            <td class="p-0 w-20">
+                                                <span class="font-weight-bold">
+من مصرف/الحساب                                                </span>
+                                            </td>
+                                            <td class="p-0 w-20">
+                                                <span class="font-weight-bold">
+إلى مصرف/الحساب                                                </span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table table-borderless m-0">
+                        <tbody>
+                            <tr t-foreach="o.wire_ids" t-as="line" class="pb-2">
+                                <td class="pl-0 pr-0">
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <td class="p-0 w-25" style="margin: 0px; padding: 0px;">
+                                                <span class="d-block" t-field="line.description"/>
+                                            </td>
+                                            <td class="p-0 w-20" style="margin: 0px; padding: 0px;">
+                                                <span class="d-block" t-field="line.partner_id"/>
+                                            </td>
+                                            <td class="p-0 w-15" style="margin: 0px; padding: 0px;">
+                                                <span class="d-block" t-field="line.amount"/>
+                                            </td>
+                                            <td class="p-0 w-20" style="margin: 0px; padding: 0px;">
+                                                <span class="d-block" t-field="line.from_bank_account.bank_id.name"/>
+                                                <span class="d-block" t-field="line.from_bank_account.acc_number"/>
+                                            </td>
+                                            <td class="p-0 w-20" style="margin: 0px; padding: 0px;">
+                                                <span class="d-block" t-field="line.to_bank_account.bank_id.name"/>
+                                                <span class="d-block" t-field="line.to_bank_account.acc_number"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-lg m-0 table-borderless border border-right-0 border-left-0 border-info">
+                        <tbody>
+                            <tr>
+                                <td class="pt-2 pb-2 pl-0 pr-0">
+                                    <table class="table table-borderless m-0">
+                                        <tr>
+                                            <td class="p-0 w-25" align="left">
+                                                <span class="d-block">
+                                                إجمالي النقدي    :
+                                                </span>
+                                            </td>
+                                            <td class="p-0 w-75" align="right" dir="rtl" colspan="3">
+                                                <strong>
+                                                    <span dir="rtl" class="d-block font-weight-bold"
+                                                          t-field="o.amount"/>
+                                                </strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-0 w-25" align="left">
+                                                <span class="d-block">
+                                                    الإجمالي بالحروف :
+                                                </span>
+                                            </td>
+                                            <td class="p-0 w-75" align="right" dir="rtl" colspan="3">
+                                                <strong>
+                                                    <span dir="rtl" class="d-block font-weight-bold"
+                                                          t-field="o.total_string"/>
+                                                </strong>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                                    <p style="height: 20px;"></p>
+                                    <table class="table table-borderless m-0">
+                                        <tr>
+                                            <td class="p-0 w-25" align="left">
+                                                <span class="d-block font-weight-bold">
+                                                تبويب أوجه الصرف :
+                                                </span>
+                                            </td>
+                                            <td class="p-0" align="right" dir="rtl">
+                                                <strong><span dir="rtl" class="d-block font-weight-bold" t-field="o.saraf_category"/></strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-0 w-25" align="left">
+                                                <span class="d-block font-weight-bold">
+                                                مركز التكلفة :
+                                                </span>
+                                            </td>
+                                            <td class="p-0" align="right" dir="rtl">
+                                                <strong><span dir="rtl" class="d-block font-weight-bold" t-field="o.department_id"/></strong>
+                                            </td>
+                                        </tr>
+                    </table>
+                                    <p style="height: 20px;"></p>
+                                    <table class="table table-borderless" style="padding-top: 10px;">
+                                        <tr>
+                                            <td class="p-0" style="width: 33%;">
+                                                إعداد :<strong><span dir="rtl" class="d-block font-weight-bold" t-field="o.prepare_id"/></strong>
+                                            </td>
+                                            <td class="p-0" style="width: 33%;">
+                                                المراجعة الداخلية :<strong><span dir="rtl" class="d-block font-weight-bold" t-field="o.auditor_id"/></strong>
+                                            </td>
+                                            <td class="p-0" style="width: 33%;">
+                                              المدير المالي : <strong><span dir="rtl" class="d-block font-weight-bold" t-field="o.cfo_id"/></strong>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <p style="height: 20px;"></p>
+                                    <table class="table table-borderless" style="padding-top: 10px;">
+                                        <tr>
+                                            <td class="p-0 w-25" style="width: 33%;">
+                                          أسم المستلم :
+                                            </td>
+                                            <td class="p-0 w-25" style="width: 33%;" colspan="3">
+                                                <strong><span dir="rtl" class="d-block font-weight-bold" t-field="o.recepient_id"/></strong>
+                                            </td>
+                                        </tr>
+                                        <tr style="margin-top: 20px;padding-top: 20px;">
+                                            <td class="p-0 w-25" style="width: 33%;">
+رقم إثبات الهوية :
+                                            </td>
+                                            <td class="p-0 w-25" style="width: 33%;">
+                                                    <strong><span dir="rtl" class="d-block font-weight-bold" t-field="o.recepient_id_no"/></strong>                                            </td>
+                                            <td class="p-0 w-25" style="width: 33%;" align="left">
+                                            </td>
+                                            <td class="p-0" style="width: 33%;" align="right">
+                                            </td>
+                                        </tr>
+                                    </table>
+
+
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_payment">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="lang" t-value="ar_LY"/>
+                <t t-if="o.saraf_type == 'cash'">
+                    <t t-call="loza_account.report_payment_call" t-lang="lang"/>
+                </t>
+                <t t-if="o.saraf_type == 'check'">
+                    <t t-call="loza_account.report_payment_check_call" t-lang="lang"/>
+                </t>
+                <t t-if="o.saraf_type == 'wire'">
+                    <t t-call="loza_account.report_payment_wire_call" t-lang="lang"/>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report
+            string="Print SARAF"
+            id="loza_account.payment_report"
+            model="loza.payment.approval"
+            report_type="qweb-pdf"
+            name="loza_account.report_payment"
+            file="loza_account.report_payment"
+    />
+</odoo>

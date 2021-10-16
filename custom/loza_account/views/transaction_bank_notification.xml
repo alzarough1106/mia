@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="transaction_bank_notification_tree_view" model="ir.ui.view">
+        <field name="name">transaction.bank.notification.tree.view</field>
+        <field name="model">transaction.bank.notification</field>
+        <field name="arch" type="xml">
+            <tree string="Transaction Details">
+                <field name="transaction_id"/>
+                 <field name="description"/>
+                <field name="amount"/>
+                        <field name="currency_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="transaction_bank_notification_form_view" model="ir.ui.view">
+         <field name="name">transaction.bank.notification.form.view</field>
+        <field name="model">transaction.bank.notification</field>
+        <field name="arch" type="xml">
+            <form string="Transaction Details">
+                <sheet>
+                    <div>
+                            <label class="oe_edit_only" for="transaction_id"
+                                   string="Transaction ID #"/>
+                            <h1>
+                                <field name="transaction_id" class="oe_inline"/>
+                            </h1>
+                    </div>
+                    <group>
+                        <group string="Details">
+                            <field name="description"/>
+                            <field name="amount"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                          <group string="Accounts">
+                            <field name="credit_account_id"/>
+                            <field name="debit_account_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+</odoo>

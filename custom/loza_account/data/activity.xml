@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <data>
+        <record id="loza_cfo_approval" model="mail.activity.type">
+            <field name="name">Payment Approved - Registrar</field>
+            <field name="category">default</field>
+            <field name="res_model_id" ref="model_loza_payment_approval"/>
+            <field name="decoration_type">warning</field>
+        </record>
+        <record id="loza_chairman_approval" model="mail.activity.type">
+            <field name="name">إعتماد إذن الصرف من رئيس المجلس</field>
+            <field name="category">default</field>
+            <field name="res_model_id" ref="model_loza_payment_approval"/>
+            <field name="decoration_type">warning</field>
+        </record>
+    </data>
+</odoo>

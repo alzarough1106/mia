@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="loza_reciept_approval_tree_view" model="ir.ui.view">
+        <field name="name">loza.reciept.approval.tree.view</field>
+        <field name="model">loza.reciept.approval</field>
+        <field name="arch" type="xml">
+            <tree string="أذونات القبض">
+                <field name="kabad_id"/>
+                <field name="kabad_type"/>
+                <field name="amount"/>
+                <field name="payment_date"/>
+                <field name="partner_id"/>
+                <field name="state"/>
+                 <field name="currency_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+        <record id="loza_reciept_approval_search_view" model="ir.ui.view">
+            <field name="name">loza.reciept.approval.search</field>
+            <field name="model">loza.reciept.approval</field>
+            <field name="arch" type="xml">
+                <search string="Kabad Documents">
+                    <filter string="Cash" name="cash" domain="[('kabad_type','=',('cash'))]"/>
+                    <filter string="Cheaque" name="check" domain="[('kabad_type','=',('check'))]"/>
+                </search>
+            </field>
+        </record>
+
+
+    <record id="loza_reciept_approval_form_view" model="ir.ui.view">
+        <field name="name">loza.reciept.approval.tree.view</field>
+        <field name="model">loza.reciept.approval</field>
+        <field name="arch" type="xml">
+            <form string="أذن القبض">
+                <header>
+                    <button name="action_confirm_kabad" string="Recieve Money" type="object"
+                            class="oe_highlight" states="draft"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,received,posted" readonly="1"/>
+
+                </header>
+                <sheet>
+                    <div class="oe_left" style="width: 500px;">
+                        <div class="oe_title" style="width: 390px;">
+                            <label class="oe_edit_only" for="kabad_id"
+                                   string="kabad #"/>
+                            <h1>
+                                <field name="kabad_id" class="oe_inline"/>
+                            </h1>
+                        </div>
+                    </div>
+                    <group cols="">
+                    <group name="بيانات المعاملة">
+                        <field name="kabad_type"/>
+                        <field name="partner_id"/>
+                        <field name="payment_date"/>
+                    </group>
+                    <group string="  ">
+                        <field name="amount"/>
+                        <field name="total_string" readonly="1"/>
+                        <field name="currency_id" invisible="1"/>
+                    </group>
+                    <group string="Items" colspan="2" attrs="{'invisible': ['|' , ('kabad_type', '=', 'check'),('kabad_type', '=', 'wire')]}">
+                        <field name="transaction_ids"/>
+                    </group>
+                    <group string="Items" colspan="2" attrs="{'invisible': ['|' , ('kabad_type', '=', 'cash'),('kabad_type', '=', 'wire')]}">
+                        <field name="check_ids"/>
+                    </group>
+                    <group string="Attachments" colspan="2">
+                        <field name="attachment_ids"/>
+                    </group>
+                    <group string="Recepient Details">
+                        <field name="recepient_id"/>
+                        <field name="recepient_id_no"/>
+                        <field name="prepare_id_jobtitle"/>
+                    </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_follower"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
+            </form>
+
+        </field>
+    </record>
+</odoo>

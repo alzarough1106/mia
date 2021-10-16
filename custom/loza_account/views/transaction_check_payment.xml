@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="transaction_check_payment_tree_view" model="ir.ui.view">
+        <field name="name">transaction.check.payment.tree.view</field>
+        <field name="model">transaction.check.payment</field>
+        <field name="arch" type="xml">
+            <tree string="Checks Transaction">
+                <field name="check_id"/>
+                 <field name="description"/>
+                <field name="check_no"/>
+               <field name="amount"/>
+                        <field name="currency_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+    <record id="transaction_check_payment_form_view" model="ir.ui.view">
+         <field name="name">transaction.check.payment.form.view</field>
+        <field name="model">transaction.check.payment</field>
+        <field name="arch" type="xml">
+            <form string="Check Transaction Details">
+                <sheet>
+                    <div>
+                            <label class="oe_edit_only" for="check_id"
+                                   string="Check Transaction ID #"/>
+                            <h1>
+                                <field name="check_id" class="oe_inline"/>
+                            </h1>
+                    </div>
+                    <group>
+                        <group string="Details">
+                            <field name="state" invisible="1"/>
+                            <field name="description"  attrs="{'readonly': [ ('state', '!=', 'open')]}"/>
+                            <field name="amount" attrs="{'readonly': [ ('state', '!=', 'open')]}"/>
+                            <field name="check_no" attrs="{'readonly': [ ('state', '!=', 'open')]}"/>
+                            <field name="check_date" attrs="{'readonly': [ ('state', '!=', 'open')]}"/>
+                        <field name="currency_id" invisible="1"/>
+                        </group>
+                    </group>
+                        <group string="Accounts">
+                            <field name="credit_account_id" attrs="{'readonly': [ ('state', '=', 'locked')]}"/>
+                            <field name="debit_account_id" attrs="{'readonly': [ ('state', '=', 'locked')]}"/>
+                        </group>
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+</odoo>

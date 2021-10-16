@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="module_category_loza_account">
+            <field name="name">Finance Group</field>
+            <field name="description">The Groups for Finance Work</field>
+            <field name="visible" eval="0"/>
+            <field name="sequence">1</field>
+        </record>
+        <record id="group_loza_account_auditor" model="res.groups">
+            <field name="name">Auditor</field>
+            <field name="comment">An Auditor within The organization</field>
+            <field name="category_id" ref="module_category_loza_account"/>
+        </record>
+        <record id="group_loza_account_payment" model="res.groups">
+            <field name="name">Payment Handler</field>
+            <field name="comment">An Employee within the Payment Division</field>
+            <field name="category_id" ref="module_category_loza_account"/>
+        </record>
+        <record id="group_loza_account_accounts" model="res.groups">
+            <field name="name">Accountant</field>
+            <field name="comment">An Accountant within the accounting division</field>
+            <field name="category_id" ref="module_category_loza_account"/>
+        </record>
+        <record id="group_loza_account_cfo" model="res.groups">
+            <field name="name">Head of Finance</field>
+            <field name="comment">The Head of Finance who approves after the auditor</field>
+            <field name="category_id" ref="module_category_loza_account"/>
+        </record>
+<!--        <record id="group_loza_account_hof" model="res.groups">-->
+<!--            <field name="name">Head of Fund</field>-->
+<!--            <field name="comment">The Head of Social Care Fund</field>-->
+<!--            <field name="category_id" ref="module_category_loza_account"/>-->
+<!--        </record>-->
+<!--        <record id="group_loza_account_chairman" model="res.groups">-->
+<!--            <field name="name">Chairman of the Board</field>-->
+<!--            <field name="comment">The chairman of the board.</field>-->
+<!--            <field name="category_id" ref="module_category_loza_account"/>-->
+<!--        </record>-->
+        <record id="group_loza_account_cash" model="res.groups">
+            <field name="name">Cash Registrars</field>
+            <field name="comment">The Head of cash registrar</field>
+            <field name="category_id" ref="module_category_loza_account"/>
+        </record>
+    </data>
+</odoo>

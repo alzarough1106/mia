@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_loza_payment_approval,loza.payment.approval,model_loza_payment_approval,,1,1,1,1
+access_loza_reciept_approval,loza.reciept.approval,model_loza_reciept_approval,,1,1,1,1
+access_loza_bank_notification,loza.bank.notification,model_loza_bank_notification,,1,1,1,1
+access_transaction_cash_payment,transaction.cash.payment,model_transaction_cash_payment,,1,1,1,1
+access_transaction_wire,transaction.wire,model_transaction_wire,,1,1,1,1
+access_transaction_check_payment,transaction.check.payment,model_transaction_check_payment,,1,1,1,1
+access_loza_transaction_attachment,loza.transaction.attachment,model_loza_transaction_attachment,,1,1,1,1
+access_loza_payment_category,loza.payment.category,model_loza_payment_category,,1,1,1,1
+access_transaction_check_reciept,transaction.check.reciept,model_transaction_check_reciept,,1,1,1,1
+access_transaction_cash_reciept,transaction.cash.reciept,model_transaction_cash_reciept,,1,1,1,1
+access_transaction_bank_notification,transaction.bank.notification,model_transaction_bank_notification,,1,1,1,1
+
+access_loza_loan,loza.loan,model_loza_loan,,1,1,1,1
+access_loza_pitty_cash,loza.pitty.cash,model_loza_pitty_cash,,1,1,1,1
