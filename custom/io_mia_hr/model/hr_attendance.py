@@ -54,7 +54,7 @@ class HrAttendance(models.Model):
             hour = d1.hour
             minute = d1.minute
             if hour == 9:
-                if minute <= 11:
+                if minute <= 2:
                     self.status = 'present'
                 else:
                     self.status = 'late'
