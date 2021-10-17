@@ -12,10 +12,10 @@
 Loza Accounting Module for Libyan Enterprise
 """,
 
-    'depends': ['web_responsive','account'],
-    'data': ['200~loza_ly_defaults',
-        'data/sequence.xml',
+    'depends': ['account'],
+    'data': ['data/sequence.xml',
         'data/activity.xml',
+        # 'data/journals.xml',
         'security/groups.xml',
         'reports/report_bank_notification.xml',
         'reports/report_payment.xml',
