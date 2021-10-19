@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="loza_office_search_view" model="ir.ui.view">
+        <field name="name">loza.office.search.view</field>
+        <field name="model">loza.office</field>
+        <field name="arch" type="xml">
+            <search string="Search Offices">
+                <field name="name" select="2"/>
+                <field name="sequence" select="1"/>
+                <separator orientation="vertical"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="loza_office_form_view" model="ir.ui.view">
+        <field name="name">loza.office.form.view</field>
+        <field name="model">loza.office</field>
+        <field name="arch" type="xml">
+            <form string="Office">
+                <sheet>
+                    <h1>
+                        <field name="sequence" class="oe_inline" readonly="True"/>
+                    </h1>
+                    <group>
+                            <field name="name"/>
+                            <field name="parent"/>
+                    </group>
+                    <group>
+                            <field name="election_points"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"
+                           groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+
+        </field>
+    </record>
+
+    <record id="loza_office_tree_view" model="ir.ui.view">
+        <field name="name">loza.office.tree.view</field>
+        <field name="model">loza.office</field>
+        <field name="arch" type="xml">
+            <tree string="Office Information">
+                <field name="sequence"/>
+                <field name="name"/>
+                <field name="parent"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_loza_office" model="ir.actions.act_window">
+        <field name="name">Offices</field>
+        <field name="res_model">loza.office</field>
+        <field name="binding_view_types">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_loza_office" action="action_loza_office"
+              parent="loza_com_office.main_menu_communication_office" sequence="2"/>
+</odoo>

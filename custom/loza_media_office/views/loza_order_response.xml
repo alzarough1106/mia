@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="loza_order_response_form_view" model="ir.ui.view">
+        <field name="name">loza.order.response.form.view</field>
+        <field name="model">loza.order.response</field>
+        <field name="arch" type="xml">
+            <form string="Order Quest">
+                <sheet>
+                    <group>
+                            <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="loza_order_response_tree_view" model="ir.ui.view">
+        <field name="name">loza.order.response.tree.view</field>
+        <field name="model">loza.order.response</field>
+        <field name="arch" type="xml">
+            <tree string="Order Response">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_loza_order_response" model="ir.actions.act_window">
+        <field name="name">Order Responses</field>
+        <field name="res_model">loza.order.response</field>
+        <field name="binding_view_types">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_loza_order_response" action="action_loza_order_response"
+              parent="loza_com_office.main_menu_communication_office" sequence="2"/>
+</odoo>
