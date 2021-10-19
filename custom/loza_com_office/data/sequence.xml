@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record id="loza_order_sequence" model="ir.sequence">
+            <field name="name">Order Number</field>
+            <field name="code">loza.order</field>
+            <field name="prefix"></field>
+            <field name="padding">6</field>
+        </record>
+         <record id="loza_office_sequence" model="ir.sequence">
+            <field name="name">Office Number</field>
+            <field name="code">loza.office</field>
+            <field name="prefix"></field>
+            <field name="padding">6</field>
+        </record>
+         <record id="loza_election_point_sequence" model="ir.sequence">
+            <field name="name">Election Point Number</field>
+            <field name="code">loza.election.point</field>
+            <field name="prefix"></field>
+            <field name="padding">6</field>
+        </record>
+    </data>
+</odoo>
