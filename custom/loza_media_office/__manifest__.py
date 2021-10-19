@@ -2,14 +2,14 @@
 # Part of BrowseInfo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': "Loza Communication Office",
+    'name': "Loza Media Office",
     'version': "1.0",
     'currency': 'LYD',
-    'summary': "Loza Comunication Office Module",
+    'summary': "Election Media Office Module",
     'category': "productivity",
-    'sequence': "10",
+    'sequence': "-111",
     'description': """
-A Module for Communication between areas Management
+A Module for arranging media events between areas Management
 """,
 
     'depends': ['mail'],

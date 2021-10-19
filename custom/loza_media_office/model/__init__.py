@@ -18,10 +18,10 @@
 # from Loza Limited
 #
 #############################################################################
-from . import loza_order
+from . import loza_event
 from . import loza_office
 from . import loza_election_point
 from . import loza_order_response
-from . import loza_order_quest
+from . import loza_event_quest
 
 
