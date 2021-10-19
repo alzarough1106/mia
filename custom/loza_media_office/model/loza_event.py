@@ -49,11 +49,10 @@ class loza_event(models.Model):
         ('cancelled', 'Cancelled'),
     ], string='Status', readonly=True, index=True, copy=False, default='draft', tracking=True)
     type = fields.Selection([
-        ('resolution', 'Resolution'),
-        ('event', 'Event'),
+        ('conferences', 'Conferences'),
+        ('vip events', 'VIP Events'),
         ('poll', 'Poll'),
-        ('service', 'Service'),
-    ], string='Type', readonly=True, index=True, copy=False, default='service', tracking=True)
+    ], string='Event Type', readonly=True, index=True, copy=False, default='conference', tracking=True)
 
     @api.model
     def create(self, vals):
