@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="loza_event_quest_form_view" model="ir.ui.view">
+        <field name="name">loza.event.quest.form.view</field>
+        <field name="model">loza.event.quest</field>
+        <field name="arch" type="xml">
+            <form string="Event Quest">
+                <sheet>
+                    <group>
+                            <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="loza_event_quest_tree_view" model="ir.ui.view">
+        <field name="name">loza.event.quest.tree.view</field>
+        <field name="model">loza.event.quest</field>
+        <field name="arch" type="xml">
+            <tree string="Event Quest">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_loza_event_quest" model="ir.actions.act_window">
+        <field name="name">Event Quests</field>
+        <field name="res_model">loza.event.quest</field>
+        <field name="binding_view_types">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_loza_event_quest" action="action_loza_event_quest"
+              parent="loza_media_office.main_menu_media_office" sequence="2"/>
+</odoo>

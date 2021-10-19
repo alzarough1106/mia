@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record id="loza_event_sequence" model="ir.sequence">
+            <field name="name">Event Number</field>
+            <field name="code">loza.event</field>
+            <field name="prefix"></field>
+            <field name="padding">6</field>
+        </record>
+    </data>
+</odoo>
