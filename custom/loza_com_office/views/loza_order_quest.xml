@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="loza_order_quest_form_view" model="ir.ui.view">
+        <field name="name">loza.order.quest.form.view</field>
+        <field name="model">loza.order.quest</field>
+        <field name="arch" type="xml">
+            <form string="Order Quest">
+                <sheet>
+                    <group>
+                            <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="loza_order_quest_tree_view" model="ir.ui.view">
+        <field name="name">loza.order.quest.tree.view</field>
+        <field name="model">loza.order.quest</field>
+        <field name="arch" type="xml">
+            <tree string="Order Quest">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_loza_order_quest" model="ir.actions.act_window">
+        <field name="name">Order Quests</field>
+        <field name="res_model">loza.order.quest</field>
+        <field name="binding_view_types">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_loza_order_quest" action="action_loza_order_quest"
+              parent="loza_com_office.main_menu_communication_office" sequence="2"/>
+</odoo>
