@@ -34,10 +34,10 @@ class loza_event(models.Model):
     _description = 'An Event for execution'
 
     sequence = fields.Char(string="Event ID", readonly=True, copy=True)
-    title = fields.Char(string="Title", )
+    title = fields.Char(string="Title of the Event", )
     date = fields.Datetime(string='Event Date')
     summary = fields.Text(string="Event Summary", )
-    offices = fields.Many2many('loza.office',string='offices')
+    place = fields.Many2many('loza.office',string='Places')
     quests = fields.Many2many('loza.event.quest',string='Quests')
     state = fields.Selection([
         ('draft', 'Draft'),
