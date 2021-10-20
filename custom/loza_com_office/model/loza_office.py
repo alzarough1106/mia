@@ -31,6 +31,7 @@ class loza_office(models.Model):
     _inherit = 'mail.thread'
     _order = 'name desc'
     _description = 'An Order for execution'
+    _rec_name = 'name'
 
     name = fields.Char(string="Office Name")
     parent = fields.Many2one('loza.office',string="Parent")

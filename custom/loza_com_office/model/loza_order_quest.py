@@ -30,7 +30,8 @@ class loza_order_quest(models.Model):
     _name = "loza.order.quest"
     _order = 'name desc'
     _description = 'An Order for execution'
+    _rec_name = 'name'
 
     name = fields.Char(string="Quest")
-    order_id = fields.Many2one('loza.order',string="Order")
+#    order_id = fields.Many2one('loza.order',string="Order")
 

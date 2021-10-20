@@ -32,5 +32,5 @@
     </record>
 
     <menuitem id="menu_loza_order_quest" action="action_loza_order_quest"
-              parent="loza_com_office.main_menu_communication_office" sequence="2"/>
+              parent="loza_com_office.main_menu_settings" sequence="3"/>
 </odoo>

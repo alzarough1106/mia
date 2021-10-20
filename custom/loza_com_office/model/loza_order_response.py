@@ -26,12 +26,29 @@ from odoo.exceptions import ValidationError
 from odoo.exceptions import UserError
 import pytz
 
-class loza_order_quest(models.Model):
+class loza_order_response(models.Model):
     _name = "loza.order.response"
-    _order = 'name desc'
+    _order = 'title desc'
     _description = 'An Order for execution'
+    _rec_name = 'title'
 
-    name = fields.Char(string="Quest")
-    quest_id = fields.Many2one('loza.order.quest',string="Quest")
+
+    title = fields.Char(string="Title")
+    notes = fields.Text(string="Notes")
+    quest_response_ids = fields.Many2many('loza.order.quest.response',string="Responses")
     office_id = fields.Many2one('loza.office',string="Office")
+    election_point = fields.Many2one('loza.election.point',string="Election Point")
+    order_id = fields.Many2one('loza.order')
+    notes = fields.Text(string="Notes")
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('done', 'Done'),
+    ], string='Status', readonly=True, index=True, copy=False, default='draft', tracking=True)
 
+    def action_submit(self):
+        self.write({'state': 'done'})
+        return
+
+    @api.onchange('election_point')
+    def _onchange_election_point(self):
+        self.title = 'Results for Election Point ' + self.election_point.name

@@ -1,60 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="loza_order_search_view" model="ir.ui.view">
-        <field name="name">loza.order.search.view</field>
-        <field name="model">loza.order</field>
-        <field name="arch" type="xml">
-            <search string="Search Orders">
-                <field name="title" select="2"/>
-                <field name="sequence" select="1"/>
-                <field name="date" select="3"/>
-                <separator orientation="vertical"/>
-                <group expand="1" string="State">
-                    <filter string="Today" name="today_state_filter"
-                            domain="[('date', '&gt;=', context_today().strftime('%Y-%m-%d 00:00:00')),('date', '&lt;=', context_today().strftime('%Y-%m-%d 23:59:59'))]"/>
-                    <filter string="Drafts" name="draft_state_filter" domain="[('state', '=', 'draft')]"/>
-                    <filter string="Ready" name="ready_state_filter" domain="[('state', '=', 'ready')]"/>
-                    <filter string="Approved" name="paid_state_filter" domain="[('state', '=', 'approved')]"/>
-                    <filter string="Distributed" name="done_state_filter" domain="[('state', '=', 'distributed')]"/>
-                    <filter string="Canceled" name="cancel_state_filter" domain="[('state', '=', 'canceled')]"/>
-                    <filter string="Finished" name="disable_state_filter" domain="[('state', '=', 'finished')]"/>
-                    <filter string="Closed" name="disable_state_filter" domain="[('state', '=', 'close')]"/>
-                    <filter string="All Requests" name="allt_state_filter" domain="[]"/>
-                </group>
-                <group expand="1" string="Group By">
-                    <filter string="Type" name='by_data' context="{'group_by':'type'}"/>
-                    <filter string="Date" name="groupby_date" domain="[]"
-                            context="{'group_by':'date:day'}"/>
-                </group>
-            </search>
-        </field>
-    </record>
+    <!--    <record id="loza_order_main_search_view" model="ir.ui.view">-->
+    <!--        <field name="name">loza.order.search.view</field>-->
+    <!--        <field name="model">loza.order</field>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <search string="Search Orders">-->
+    <!--                <field name="title" select="2"/>-->
+    <!--                <field name="sequence" select="1"/>-->
+    <!--                <field name="date" select="3"/>-->
+    <!--                <separator orientation="vertical"/>-->
+    <!--                <group expand="1" string="State">-->
+    <!--                    <filter string="Today" name="today_state_filter"-->
+    <!--                            domain="[('date', '&gt;=', context_today().strftime('%Y-%m-%d 00:00:00')),('date', '&lt;=', context_today().strftime('%Y-%m-%d 23:59:59'))]"/>-->
+    <!--                    <filter string="Drafts" name="draft_state_filter" domain="[('state', '=', 'draft')]"/>-->
+    <!--                    <filter string="Sent" name="paid_state_filter" domain="[('state', '=', 'sent')]"/>-->
+    <!--                    <filter string="In Progress" name="done_state_filter" domain="[('state', '=', 'inprogress')]"/>-->
+    <!--                    <filter string="Canceled" name="cancel_state_filter" domain="[('state', '=', 'cancel')]"/>-->
+    <!--                    <filter string="Done" name="disable_state_filter" domain="[('state', '=', 'done')]"/>-->
+    <!--                    <filter string="All Requests" name="allt_state_filter" domain="[]"/>-->
+    <!--                </group>-->
+    <!--                <group expand="1" string="Group By">-->
+    <!--                    <filter string="Type" name='by_data' context="{'group_by':'type'}"/>-->
+    <!--                    <filter string="Date" name="groupby_date" domain="[]"-->
+    <!--                            context="{'group_by':'date:day'}"/>-->
+    <!--                </group>-->
+    <!--            </search>-->
+    <!--        </field>-->
+    <!--    </record>-->
 
-    <record id="loza_order_form_view" model="ir.ui.view">
+    <record id="loza_order_main_form_view" model="ir.ui.view">
         <field name="name">loza.order.form.view</field>
         <field name="model">loza.order</field>
         <field name="arch" type="xml">
             <form string="Order">
                 <header>
+                    <button name="action_send_order"
+                            string="Send" type="object" states="draft"
+                            class="oe_highlight btn-warning"
+                            groups="loza_com_office.group_com_admin"
+                    />
+                    <button name="action_set_execution"
+                            string="Accept Ownership" type="object" states="sent"
+                            class="oe_highlight btn-warning"
+                            groups="loza_com_office.group_com_task_owner"
+                            context="{'default_order_id': id}"
+                    />
+                    <button name="action_create_order_response"
+                            string="Add Order Response" states="inprogress" type="object"
+                            groups="loza_com_office.group_com_task_owner"
+                            class="btn-warning"/>
+
                     <field name="state" widget="statusbar"
-                           statusbar_visible="draft,ready,approved,distributed,cancelled,close" readonly="1"/>
+                           statusbar_visible="draft,sent,inprogress,done,cancel" readonly="1"/>
                 </header>
+
                 <sheet>
-                    <h1>
-                        <field name="sequence" class="oe_inline" readonly="True"/>
-                    </h1>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="loza_order_responses" type="object" class="oe_stat_button"
+                                icon="fa-edit"
+                                groups="loza_com_office.group_com_member"
+                                context="{'order_id': id}"
+                        >
+                            <field name="response_count" string="Responses" widget="statinfo"/>
+                        </button>
+                        <button name="loza_order_stats" type="object" class="oe_stat_button"
+                                icon="fa-circle"
+                                groups="loza_com_office.group_com_admin"
+                                context="{'order_id': id}"
+                        >
+                            Visual Stats
+                        </button>
+                    </div>
                     <group>
-                            <field name="date" t-options="{'format': 'dd / MM / yyyy HH'}" attrs="{'readonly':[('state','!=','draft')]}"/>
-                            <field name="type" attrs="{'readonly':[('state','!=','draft')]}"/>
+                        <h1>
+                            <field name="sequence" class="oe_inline" readonly="True"/>
+                        </h1>
+                    </group>
+                    <group>
+                        <group>
                             <field name="sequence" readonly="1"/>
+                            <field name="type" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="date" t-options="{'format': 'dd / MM / yyyy HH'}"
+                                   attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="before_date" t-options="{'format': 'dd / MM / yyyy HH'}"
+                                   attrs="{'readonly':[('state','!=','draft')]}"/>
+                        </group>
+                        <group>
                             <field name="title" attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="summary" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="desgnated_office"
+                                   attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="originating_office" readonly="1"/>
+                        </group>
                     </group>
                     <group>
-                            <field name="quests"/>
+                        <group string="Order User">
+                            <field name="order_user" readonly="1"/>
+                            <field name="order_user_mobile" readonly="1"/>
+                        </group>
+                        <group string="Executive User">
+                            <field name="order_executive" readonly="1"/>
+                            <field name="order_executive_mobile" readonly="1"/>
+                        </group>
                     </group>
-                    <group>
-                            <field name="offices"/>
+                    <group string="Execution Offices" attrs="{'invisible':[('state','=','draft')]}">
+                        <field name="offices" widget="many2many_tags"
+                               attrs="{'readonly':[('state','!=','sent')],'invisible':[('state','=','draft')]}"/>
+                    </group>
+                    <group string="Order Quests">
+                        <field name="quests" edit="0" delete="1" attrs="{'readonly':[('state','!=','draft')]}"/>
                     </group>
                 </sheet>
                 <div class="oe_chatter">
@@ -68,17 +122,17 @@
     </record>
 
 
-    <record id="loza_order_calendar_view" model="ir.ui.view">
-        <field name="name">loza.order.calendar.view</field>
-        <field name="model">loza.order</field>
-        <field name="arch" type="xml">
-            <calendar string="Orders"
-                      quick_add="False" date_start="date">
-                <field name="title"/>
-                <field name="sequence"/>
-            </calendar>
-        </field>
-    </record>
+    <!--    <record id="loza_order_calendar_view" model="ir.ui.view">-->
+    <!--        <field name="name">loza.order.calendar.view</field>-->
+    <!--        <field name="model">loza.order</field>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <calendar string="Orders"-->
+    <!--                      quick_add="False" date_start="date">-->
+    <!--                <field name="title"/>-->
+    <!--                <field name="sequence"/>-->
+    <!--            </calendar>-->
+    <!--        </field>-->
+    <!--    </record>-->
 
     <record id="loza_order_tree_view" model="ir.ui.view">
         <field name="name">loza.order.tree.view</field>
@@ -86,8 +140,11 @@
         <field name="arch" type="xml">
             <tree string="Order Information">
                 <field name="title"/>
-                <field name="type"/>
                 <field name="sequence"/>
+                <field name="desgnated_office"/>
+                <field name="originating_office"/>
+                <field name="order_user"/>
+                <field name="desgnated_office"/>
                 <field name="date"/>
                 <field name="state"
                        decoration-info="state == 'draft'"
@@ -100,20 +157,104 @@
         </field>
     </record>
 
-    <record id="action_loza_order" model="ir.actions.act_window">
-        <field name="name">Orders</field>
-        <field name="res_model">loza.order</field>
-        <field name="binding_view_types">form</field>
-        <field name="view_mode">tree,form,calendar</field>
+    <record model="ir.actions.server" id="action_loza_order">
+        <field name="name">Work Orders</field>
+        <field name="model_id" ref="loza_com_office.model_loza_order"/>
+        <field name="groups_id" eval="[(4,ref('loza_com_office.group_com_member'))]"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_open_orders()
+        </field>
     </record>
+    <record model="ir.actions.server" id="action_desgated_orders">
+        <field name="name">Office Desgnated Orders</field>
+        <field name="model_id" ref="loza_com_office.model_loza_order"/>
+        <field name="groups_id" eval="[(4,ref('loza_com_office.group_com_member'))]"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_open_desgnated_orders()
+        </field>
+    </record>
+    <record model="ir.actions.server" id="action_loza_my_team_order">
+        <field name="name">My Office Orders</field>
+        <field name="model_id" ref="loza_com_office.model_loza_order"/>
+        <field name="groups_id" eval="[(4,ref('loza_com_office.group_com_member'))]"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_open_my_team_orders()
+        </field>
+    </record>
+
+    <record model="ir.actions.server" id="action_loza_my_order">
+        <field name="name">My Orders</field>
+        <field name="model_id" ref="loza_com_office.model_loza_order"/>
+        <field name="groups_id" eval="[(4,ref('loza_com_office.group_com_member'))]"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_open_my_orders()
+        </field>
+    </record>
+
+    <record model="ir.actions.server" id="action_loza_all_order">
+        <field name="name">All Orders</field>
+        <field name="model_id" ref="loza_com_office.model_loza_order"/>
+        <field name="groups_id" eval="[(4,ref('loza_com_office.group_com_member'))]"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_open_all_orders()
+        </field>
+    </record>
+    <record model="ir.actions.server" id="action_loza_my_owned_orders">
+        <field name="name">My Owned Orders</field>
+        <field name="model_id" ref="loza_com_office.model_loza_order"/>
+        <field name="groups_id" eval="[(4,ref('loza_com_office.group_com_member'))]"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_open_my_owned_orders()
+        </field>
+    </record>
+
+    <!--    <record id="action_loza_order" model="ir.actions.act_window">-->
+    <!--        <field name="name">Orders</field>-->
+    <!--        <field name="res_model">loza.order</field>-->
+    <!--        <field name="binding_view_types">form</field>-->
+    <!--        <field name="view_mode">tree,form</field>-->
+    <!--    </record>-->
 
     <menuitem
             id="main_menu_communication_office"
             name="Communication Office"
             web_icon="loza_com_office,static/description/icon.png"
+            sequence="0"
+    />
+    <menuitem
+            id="main_menu_orders"
+            parent="loza_com_office.main_menu_communication_office"
+            name="Orders"
             sequence="1"
+    />
+    <menuitem
+            id="main_menu_settings"
+            parent="loza_com_office.main_menu_communication_office"
+            name="Settings"
+            groups="loza_com_office.group_com_admin"
+            sequence="3"
     />
 
     <menuitem id="menu_loza_order" action="action_loza_order"
-              parent="loza_com_office.main_menu_communication_office" sequence="1"/>
+              parent="loza_com_office.main_menu_orders" sequence="4"/>
+    <menuitem id="menu_office_desgnated_order" action="action_desgated_orders"
+              parent="loza_com_office.main_menu_orders" sequence="1"/>
+    <menuitem id="menu_loza_my_owned_orders" action="action_loza_my_owned_orders"
+              parent="loza_com_office.main_menu_orders" sequence="2"/>
+
+    <menuitem id="menu_loza_my_orders" action="action_loza_my_order"
+              groups="loza_com_office.group_com_admin"
+              parent="loza_com_office.main_menu_orders" sequence="3"/>
+    <menuitem id="menu_loza_my_team_orders" action="action_loza_my_team_order"
+              groups="loza_com_office.group_com_admin"
+              parent="loza_com_office.main_menu_orders" sequence="2"/>
+    <menuitem id="menu_loza_all_order" action="action_loza_all_order"
+              groups="loza_com_office.group_com_admin"
+              parent="loza_com_office.main_menu_orders" sequence="5"/>
 </odoo>
