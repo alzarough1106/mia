@@ -44,7 +44,7 @@ class loza_order(models.Model):
     order_user = fields.Many2one('res.users', 'Order Originator')
     order_user_mobile = fields.Char('Order Originator Mobile Number', related="order_user.partner_id.mobile")
 
-    # The User Accountabile for executing the order
+    # The User Accountable for executing the order
     order_executive = fields.Many2one('res.users', 'Order Co-ordinator')
     order_executive_mobile = fields.Char('Order Co-ordinator Mobile Number',
                                          related="order_executive.partner_id.mobile")

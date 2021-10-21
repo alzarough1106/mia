@@ -28,6 +28,7 @@
                 </group>
             </search>
         </field>
+
     </record>
 
     <record id="loza_event_form_view" model="ir.ui.view">
@@ -36,8 +37,12 @@
         <field name="arch" type="xml">
             <form string="Event">
                 <header>
+                    <button name="action_send_event"
+                            string="Send" type="object" states="draft"
+                            class="oe_highlight btn-warning"
+                    />
                     <field name="state" widget="statusbar"
-                           statusbar_visible="draft,ready,approved,distributed,cancelled,close" readonly="1"/>
+                           statusbar_visible="draft,sent,inprogress,done,cancel" readonly="1"/>
                 </header>
                 <sheet>
                     <h1>

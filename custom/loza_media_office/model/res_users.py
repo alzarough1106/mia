@@ -18,8 +18,12 @@
 # from Loza Limited
 #
 #############################################################################
-from . import loza_event
-from . import loza_event_quest
-from . import res_users
+
+from odoo import fields, models
 
 
+class ResUsers(models.Model):
+
+    _inherit = 'res.users'
+
+    office_id = fields.Many2one('loza.office', string='Campaign Office')
