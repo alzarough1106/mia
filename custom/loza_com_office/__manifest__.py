@@ -7,12 +7,12 @@
     'currency': 'LYD',
     'summary': "Loza Comunication Office Module",
     'category': "productivity",
-    'sequence': "10",
+    'sequence': "-110",
     'description': """
 A Module for Communication between areas Management
 """,
 
-    'depends': ['mail'],
+    'depends': ['mail','loza_media_office'],
     'data': [
         'data/sequence.xml',
         'security/groups.xml',

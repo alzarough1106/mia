@@ -16,7 +16,7 @@ A Module for arranging media events between areas Management
     'data': [
         'data/sequence.xml',
         'views/loza_event.xml',
-#        'security/groups.xml',
+       'security/groups.xml',
         'views/loza_event_quest.xml',
         'security/ir.model.access.csv',
     ],

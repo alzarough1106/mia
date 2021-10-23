@@ -1,6 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_loza_order,loza.order,model_loza_order,loza_com_office.group_com_member,1,1,0,0
-access_loza_order_admin,loza.order.admin,model_loza_order,loza_com_office.group_com_admin,1,1,1,0
+access_loza_order,loza.order,model_loza_order,loza_com_office.group_com_member,1,1,0,1
+access_loza_order_admin,loza.order.admin,model_loza_order,loza_com_office.group_com_admin,1,1,1,1
 access_loza_office,loza.office,model_loza_office,loza_com_office.group_com_member,1,1,1,1
 access_loza_election_point,loza.election.point,model_loza_election_point,loza_com_office.group_com_member,1,1,1,1
 access_loza_order_quest,loza.order.quest,model_loza_order_quest,loza_com_office.group_com_member,1,1,1,1

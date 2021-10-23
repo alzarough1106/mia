@@ -213,7 +213,22 @@
             action = model.action_open_my_owned_orders()
         </field>
     </record>
+<!--    <record model="ir.actions.server" id="action_loza_media_event">-->
+<!--        <field name="name">Media Events</field>-->
+<!--        <field name="model_id" ref="loza_media_office.model_loza_event"/>-->
+<!--        <field name="groups_id" eval="[(4,ref('loza_media_office.group_media_member'))]"/>-->
+<!--        <field name="state">code</field>-->
+<!--        <field name="code">-->
+<!--            action = model.action_open_media_event()-->
+<!--        </field>-->
+<!--    </record>-->
 
+    <record id="action_loza_media_event" model="ir.actions.act_window">
+        <field name="name">Media Events</field>
+        <field name="res_model">loza.event</field>
+        <field name="binding_view_types">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
     <!--    <record id="action_loza_order" model="ir.actions.act_window">-->
     <!--        <field name="name">Orders</field>-->
     <!--        <field name="res_model">loza.order</field>-->
@@ -233,12 +248,19 @@
             name="Orders"
             sequence="1"
     />
+    />
+    <menuitem
+            id="main_menu_events"
+            parent="loza_com_office.main_menu_communication_office"
+            name="Events"
+            sequence="3"
+    />
     <menuitem
             id="main_menu_settings"
             parent="loza_com_office.main_menu_communication_office"
             name="Settings"
             groups="loza_com_office.group_com_admin"
-            sequence="3"
+            sequence="4"
     />
 
     <menuitem id="menu_loza_order" action="action_loza_order"
@@ -257,4 +279,8 @@
     <menuitem id="menu_loza_all_order" action="action_loza_all_order"
               groups="loza_com_office.group_com_admin"
               parent="loza_com_office.main_menu_orders" sequence="5"/>
+
+    <menuitem id="menu_loza_media_event" action="action_loza_media_event"
+              groups="loza_media_office.group_media_admin"
+              parent="loza_com_office.main_menu_events" sequence="1"/>
 </odoo>

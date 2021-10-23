@@ -57,7 +57,8 @@ class loza_event(models.Model):
     # The User who originated the Event and it is automatic
     event_user = fields.Many2one('res.users', 'Event Originator')
     event_user_mobile = fields.Char('Event Originator Mobile Number', related="event_user.partner_id.mobile")
-
+    designated_office = fields.Many2one('loza.office', string='Designated Office')
+    originating_office = fields.Many2one('loza.office', string='Originating Office', related="event_user.office_id", store=True, index=True)
     @api.model
     def create(self, vals):
         vals['sequence'] = self.env['ir.sequence'].next_by_code('loza.event')
@@ -67,7 +68,7 @@ class loza_event(models.Model):
     def action_send_event(self):
         self.write({'state': 'sent'})
         self.event_user = self.env.user
-        return {}
+        return {'res_model': 'loza.order'}
 
 
 

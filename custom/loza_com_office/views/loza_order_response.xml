@@ -40,9 +40,9 @@
         <field name="arch" type="xml">
             <tree string="Order Response">
                 <field name="title"/>
-                <field name="office_id"/>
-                <field name="election_point"/>
                 <field name="order_id"/>
+                <field name="election_point"/>
+                <field name="office_id"/>
                 <field name="state"/>
             </tree>
         </field>
