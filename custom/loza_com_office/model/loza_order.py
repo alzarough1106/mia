@@ -231,7 +231,7 @@ class loza_order(models.Model):
             'name': _('Media Events'),
             'type': 'ir.actions.act_window',
             'view_mode': 'tree,form',
-            'domain': [('event_id', '=', self.id)],
+            'domain': [('designated_office', '=', self.env.user.office_id.id)],
             'binding_view_types': 'tree',
             'res_model': 'loza_media_office.loza.event',
         }
