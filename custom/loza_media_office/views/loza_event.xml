@@ -8,7 +8,6 @@
                 <field name="title" select="2"/>
                 <field name="sequence" select="1"/>
                 <field name="date" select="3"/>
-                <separator orientation="vertical"/>
                 <group expand="1" string="State">
                     <filter string="Today" name="today_state_filter"
                             domain="[('date', '&gt;=', context_today().strftime('%Y-%m-%d 00:00:00')),('date', '&lt;=', context_today().strftime('%Y-%m-%d 23:59:59'))]"/>
@@ -28,6 +27,7 @@
                 </group>
             </search>
         </field>
+
     </record>
 
     <record id="loza_event_form_view" model="ir.ui.view">
@@ -36,25 +36,42 @@
         <field name="arch" type="xml">
             <form string="Event">
                 <header>
+                    <button name="action_send_event"
+                            string="Send" type="object" states="draft"
+                            class="oe_highlight btn-warning"
+                            groups="loza_media_office.group_media_admin"
+
+                    />
                     <field name="state" widget="statusbar"
-                           statusbar_visible="draft,ready,approved,distributed,cancelled,close" readonly="1"/>
+                           statusbar_visible="draft,sent,inprogress,done,cancel" readonly="1"/>
                 </header>
                 <sheet>
                     <h1>
                         <field name="sequence" class="oe_inline" readonly="True"/>
                     </h1>
                     <group>
-                            <field name="date" t-options="{'format': 'dd / MM / yyyy HH'}" attrs="{'readonly':[('state','!=','draft')]}"/>
+                        <group>
+                            <field name="date" t-options="{'format': 'dd / MM / yyyy HH'}"
+                                   attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="type" attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="sequence" readonly="1"/>
                             <field name="title" attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="summary" attrs="{'readonly':[('state','!=','draft')]}"/>
+
+                        </group>
+                        <group>
+                            <field name="designated_office"
+                                   attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="originating_office" readonly="1"/>
+                        </group>
                     </group>
+
                     <group>
+                        <group>
                             <field name="quests"/>
-                    </group>
-                    <group>
+
                             <field name="place"/>
+                        </group>
                     </group>
                 </sheet>
                 <div class="oe_chatter">

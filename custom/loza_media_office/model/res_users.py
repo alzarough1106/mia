@@ -19,19 +19,11 @@
 #
 #############################################################################
 
-from odoo import api, fields, models, _
-from datetime import date, datetime
-from datetime import datetime, timedelta
-from odoo.exceptions import ValidationError
-from odoo.exceptions import UserError
-import pytz
+from odoo import fields, models
 
-class loza_order_quest(models.Model):
-    _name = "loza.order.quest"
-    _order = 'name desc'
-    _description = 'An Order for execution'
-    _rec_name = 'name'
 
-    name = fields.Char(string="Quest")
-#    order_id = fields.Many2one('loza.order',string="Order")
+class ResUsers(models.Model):
 
+    _inherit = 'res.users'
+
+    office_id = fields.Many2one('loza.office', string='Campaign Office')

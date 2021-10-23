@@ -31,6 +31,7 @@ class loza_election_point(models.Model):
     _inherit = 'mail.thread'
     _order = 'name desc'
     _description = 'An election point where people go and vote'
+    _rec_name = 'name'
 
     sequence = fields.Char(string="Sequence")
     name = fields.Char(string="Election Point Name")

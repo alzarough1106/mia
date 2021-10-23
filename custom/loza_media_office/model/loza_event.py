@@ -41,25 +41,35 @@ class loza_event(models.Model):
     quests = fields.Many2many('loza.event.quest',string='Quests')
     state = fields.Selection([
         ('draft', 'Draft'),
-        ('ready', 'Ready'),
-        ('approved', 'Approved'),
-        ('distributed', 'Distributed'),
-        ('finished', 'Finished'),
-        ('close', 'Close'),
-        ('cancelled', 'Cancelled'),
+        ('sent', 'Sent'),
+        ('inprogress', 'In progress'),
+        ('done', 'Done'),
+        ('cancel', 'Cancelled'),
     ], string='Status', readonly=True, index=True, copy=False, default='draft', tracking=True)
+
     type = fields.Selection([
         ('resolution', 'Resolution'),
         ('event', 'Event'),
         ('poll', 'Poll'),
         ('service', 'Service'),
-    ], string='Type', readonly=True, index=True, copy=False, default='service', tracking=True)
+    ], string='Type', readonly=True, index=True, copy=False, default='event', tracking=True)
 
+    # The User who originated the Event and it is automatic
+    event_user = fields.Many2one('res.users', 'Event Originator')
+    event_user_mobile = fields.Char('Event Originator Mobile Number', related="event_user.partner_id.mobile")
+    designated_office = fields.Many2one('loza.office', string='Designated Office')
+    originating_office = fields.Many2one('loza.office', string='Originating Office', related="event_user.office_id", store=True, index=True)
     @api.model
     def create(self, vals):
         vals['sequence'] = self.env['ir.sequence'].next_by_code('loza.event')
         result = super(loza_event, self).create(vals)
         return result
+
+    def action_send_event(self):
+        self.write({'state': 'sent'})
+        self.event_user = self.env.user
+        return {'res_model': 'loza.order'}
+
 
 
     # currency_id = fields.Many2one('res.currency', string='Currency', default=_get_default_currency)
