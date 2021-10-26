@@ -1,32 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!--    <record id="loza_order_main_search_view" model="ir.ui.view">-->
-    <!--        <field name="name">loza.order.search.view</field>-->
-    <!--        <field name="model">loza.order</field>-->
-    <!--        <field name="arch" type="xml">-->
-    <!--            <search string="Search Orders">-->
-    <!--                <field name="title" select="2"/>-->
-    <!--                <field name="sequence" select="1"/>-->
-    <!--                <field name="date" select="3"/>-->
-    <!--                <separator orientation="vertical"/>-->
-    <!--                <group expand="1" string="State">-->
-    <!--                    <filter string="Today" name="today_state_filter"-->
-    <!--                            domain="[('date', '&gt;=', context_today().strftime('%Y-%m-%d 00:00:00')),('date', '&lt;=', context_today().strftime('%Y-%m-%d 23:59:59'))]"/>-->
-    <!--                    <filter string="Drafts" name="draft_state_filter" domain="[('state', '=', 'draft')]"/>-->
-    <!--                    <filter string="Sent" name="paid_state_filter" domain="[('state', '=', 'sent')]"/>-->
-    <!--                    <filter string="In Progress" name="done_state_filter" domain="[('state', '=', 'inprogress')]"/>-->
-    <!--                    <filter string="Canceled" name="cancel_state_filter" domain="[('state', '=', 'cancel')]"/>-->
-    <!--                    <filter string="Done" name="disable_state_filter" domain="[('state', '=', 'done')]"/>-->
-    <!--                    <filter string="All Requests" name="allt_state_filter" domain="[]"/>-->
-    <!--                </group>-->
-    <!--                <group expand="1" string="Group By">-->
-    <!--                    <filter string="Type" name='by_data' context="{'group_by':'type'}"/>-->
-    <!--                    <filter string="Date" name="groupby_date" domain="[]"-->
-    <!--                            context="{'group_by':'date:day'}"/>-->
-    <!--                </group>-->
-    <!--            </search>-->
-    <!--        </field>-->
-    <!--    </record>-->
 
     <record id="loza_order_main_form_view" model="ir.ui.view">
         <field name="name">loza.order.form.view</field>
@@ -121,19 +94,6 @@
         </field>
     </record>
 
-
-    <!--    <record id="loza_order_calendar_view" model="ir.ui.view">-->
-    <!--        <field name="name">loza.order.calendar.view</field>-->
-    <!--        <field name="model">loza.order</field>-->
-    <!--        <field name="arch" type="xml">-->
-    <!--            <calendar string="Orders"-->
-    <!--                      quick_add="False" date_start="date">-->
-    <!--                <field name="title"/>-->
-    <!--                <field name="sequence"/>-->
-    <!--            </calendar>-->
-    <!--        </field>-->
-    <!--    </record>-->
-
     <record id="loza_order_tree_view" model="ir.ui.view">
         <field name="name">loza.order.tree.view</field>
         <field name="model">loza.order</field>
@@ -213,28 +173,27 @@
             action = model.action_open_my_owned_orders()
         </field>
     </record>
-<!--    <record model="ir.actions.server" id="action_loza_media_event">-->
-<!--        <field name="name">Media Events</field>-->
-<!--        <field name="model_id" ref="loza_media_office.model_loza_event"/>-->
-<!--        <field name="groups_id" eval="[(4,ref('loza_media_office.group_media_member'))]"/>-->
-<!--        <field name="state">code</field>-->
-<!--        <field name="code">-->
-<!--            action = model.action_open_media_event()-->
-<!--        </field>-->
-<!--    </record>-->
-
-    <record id="action_loza_media_event" model="ir.actions.act_window">
-        <field name="name">Media Events</field>
-        <field name="res_model">loza.event</field>
-        <field name="binding_view_types">form</field>
-        <field name="view_mode">tree,form</field>
+    <record model="ir.actions.server" id="action_loza_media_event">
+        <field name="name">My Media Events</field>
+        <field name="model_id" ref="loza_media_office.model_loza_event"/>
+        <field name="groups_id" eval="[(4,ref('loza_media_office.group_media_member'))]"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_open_designated_events()
+        </field>
     </record>
-    <!--    <record id="action_loza_order" model="ir.actions.act_window">-->
-    <!--        <field name="name">Orders</field>-->
-    <!--        <field name="res_model">loza.order</field>-->
-    <!--        <field name="binding_view_types">form</field>-->
-    <!--        <field name="view_mode">tree,form</field>-->
-    <!--    </record>-->
+
+    <record model="ir.actions.server" id="action_all_media_events">
+        <field name="name">All Event_s</field>
+        <field name="model_id" ref="loza_media_office.model_loza_event"/>
+        <field name="groups_id" eval="[(4,ref('loza_media_office.group_media_member'))]"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_open_all_events()
+        </field>
+    </record>
+
+<!--??????????????????????????????-->
 
     <menuitem
             id="main_menu_communication_office"
@@ -252,7 +211,7 @@
     <menuitem
             id="main_menu_events"
             parent="loza_com_office.main_menu_communication_office"
-            name="Events"
+            name="Assigned Events"
             sequence="3"
     />
     <menuitem
@@ -265,22 +224,30 @@
 
     <menuitem id="menu_loza_order" action="action_loza_order"
               parent="loza_com_office.main_menu_orders" sequence="4"/>
+
     <menuitem id="menu_office_desgnated_order" action="action_desgated_orders"
               parent="loza_com_office.main_menu_orders" sequence="1"/>
+
     <menuitem id="menu_loza_my_owned_orders" action="action_loza_my_owned_orders"
               parent="loza_com_office.main_menu_orders" sequence="2"/>
 
     <menuitem id="menu_loza_my_orders" action="action_loza_my_order"
               groups="loza_com_office.group_com_admin"
               parent="loza_com_office.main_menu_orders" sequence="3"/>
+
     <menuitem id="menu_loza_my_team_orders" action="action_loza_my_team_order"
               groups="loza_com_office.group_com_admin"
               parent="loza_com_office.main_menu_orders" sequence="2"/>
+
     <menuitem id="menu_loza_all_order" action="action_loza_all_order"
               groups="loza_com_office.group_com_admin"
               parent="loza_com_office.main_menu_orders" sequence="5"/>
 
-    <menuitem id="menu_loza_media_event" action="action_loza_media_event"
+    <menuitem id="menu_loza_task_owner" action="action_loza_media_event"
               groups="loza_media_office.group_media_admin"
               parent="loza_com_office.main_menu_events" sequence="1"/>
+
+    <menuitem id="menu_loza_all_events" action="action_all_media_events"
+              groups="loza_media_office.group_media_admin"
+              parent="loza_com_office.main_menu_events" sequence="2"/>
 </odoo>

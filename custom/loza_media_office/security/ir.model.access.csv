@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_loza_event,loza.event,model_loza_event,loza_com_office.group_com_member,1,1,1,1
-access_loza_event_quest,loza.event.quest,model_loza_event_quest,loza_com_office.group_com_member,1,1,1,1
+access_loza_event,loza.event,model_loza_event,loza_media_office.group_media_admin,1,1,1,0
+access_loza_event,loza.event,model_loza_event,loza_media_office.group_media_task_owner,1,1,1,0
+access_loza_event_quest,loza.event.quest,model_loza_event_quest,loza_media_office.group_media_member,1,1,1,0

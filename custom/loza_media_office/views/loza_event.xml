@@ -40,7 +40,23 @@
                             string="Send" type="object" states="draft"
                             class="oe_highlight btn-warning"
                             groups="loza_media_office.group_media_admin"
+                    />
+                    <button name="action_accept_event"
+                            string="Accept Event" type="object" states="sent"
+                            class="oe_highlight btn-warning"
+                            groups="loza_media_office.group_media_task_owner"
+                            context="{'default_event_id': id}"
+                    />
 
+                    <button name="action_cancel" string=" Cancel" type="object"
+                            states="sent,draft"
+                            groups="loza_media_office.group_media_task_owner"
+                            context="{'default_event_id': id}"
+                    />
+                    <button name="action_draft" string=" Set To Draft" type="object"
+                            states="sent,cancel"
+                            groups="loza_media_office.group_media_task_owner"
+                            context="{'default_event_id': id}"
                     />
                     <field name="state" widget="statusbar"
                            statusbar_visible="draft,sent,inprogress,done,cancel" readonly="1"/>
@@ -62,7 +78,6 @@
                         <group>
                             <field name="designated_office"
                                    attrs="{'readonly':[('state','!=','draft')]}"/>
-                            <field name="originating_office" readonly="1"/>
                         </group>
                     </group>
 
@@ -117,20 +132,32 @@
         </field>
     </record>
 
-    <record id="action_loza_event" model="ir.actions.act_window">
+<!--???????????????????????-->
+
+    <record model="ir.actions.server" id="action_loza_events">
         <field name="name">Events</field>
-        <field name="res_model">loza.event</field>
-        <field name="binding_view_types">form</field>
-        <field name="view_mode">tree,form,calendar</field>
+        <field name="model_id" ref="loza_media_office.model_loza_event"/>
+        <field name="groups_id" eval="[(4,ref('loza_media_office.group_media_member'))]"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_open_events()
+        </field>
     </record>
 
     <menuitem
             id="main_menu_media_office"
             name="Media Office"
             web_icon="loza_media_office,static/description/icon.png"
+            sequence="0"
+    />
+    <menuitem
+            id="main_media_office"
+            name="Events"
+            parent="main_menu_media_office"
             sequence="1"
     />
+    <menuitem id="menu_loza_assigned_event" action="action_loza_events"
+              parent="loza_media_office.main_media_office" sequence="1"
+    />
 
-    <menuitem id="menu_loza_event" action="action_loza_event"
-              parent="loza_media_office.main_menu_media_office" sequence="1"/>
 </odoo>

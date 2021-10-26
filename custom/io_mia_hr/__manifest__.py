@@ -8,7 +8,7 @@
     "description": """
     Developed and Maintained by Abr Afrikia Inc   
 """,
-
+    'sequence': "-190",
     "depends": ["hr","hr_holidays","hr_org_chart","hr_attendance","hr_contract","contacts","ow_web_responsive"],
     "data": [
         'data/org_chart.xml',

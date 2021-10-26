@@ -41,6 +41,8 @@ class io_exit_permissions(models.Model):
     state = fields.Selection([
         ('draft', 'مسودة'),
         ('done', 'Done'),
+        ('sent', 'Sent'),
+        ('cancel', 'Canceled'),
     ], string='Status', readonly=True, copy=False, default='draft')
     sorted = fields.Boolean(string='Is Sorted?',default=False)
 
@@ -53,9 +55,18 @@ class io_exit_permissions(models.Model):
             msg.message_post(body=msg_body)
         return result
 
+    def action_cancel_exit_permission(self):
+        self.write({'state': "cancel"})
+
+    def action_send_exit_permission(self):
+        self.write({'state': "sent"})
+
+    def action_set_exit_draft(self):
+        self.write({'state': "draft"})
+
     def action_accept_exit_permission(self):
         # mark the entry as exited and exist
-        outer_dt = self.exit_dt + timedelta(days=1)
+        outer_dt = self.exit_dt + timedelta(hours=1)
         attendance_record = self.env['hr.attendance'].search([
                       ('check_in', '>=', self.exit_dt),
                       ('employee_id', '=', self.employee_id.id),

@@ -30,7 +30,6 @@ import pytz
 class loza_order(models.Model):
     _name = "loza.order"
     _inherit = 'mail.thread'
-    # _inherit = 'loza_media_office.loza.event'
     _order = 'date desc'
     _rec_name = 'sequence'
     _description = 'An Order for execution'
@@ -228,10 +227,20 @@ class loza_order(models.Model):
 
     def action_open_media_event(self):
         return {
-            'name': _('Media Events'),
+            'name': _('My Assigned Events'),
             'type': 'ir.actions.act_window',
             'view_mode': 'tree,form',
             'domain': [('designated_office', '=', self.env.user.office_id.id)],
+            'binding_view_types': 'tree',
+            'res_model': 'loza_media_office.loza.event',
+        }
+
+    def action_open_all_events(self):
+        return {
+            'name': _('All Events'),
+            'type': 'ir.actions.act_window',
+            'view_mode': 'tree,form',
+            'domain': [('designated_office', '=', self.env.office_id.id)],
             'binding_view_types': 'tree',
             'res_model': 'loza_media_office.loza.event',
         }

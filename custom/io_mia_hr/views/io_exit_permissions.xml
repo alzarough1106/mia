@@ -21,10 +21,18 @@
             <field name="arch" type="xml">
                 <form string="أذن الخروج">
                     <header>
-                             <button name="action_accept_exit_permission" string="قبول" type="object" states="draft"
+                             <button name="action_set_exit_draft" string="Set as A Draft" type="object" states="sent,cancel"
                                 class="oe_highlight" groups="io_mia_hr.group_mia_hr"/>
+                             <button name="action_send_exit_permission" string="Send" type="object" states="draft"
+                                class="oe_highlight" groups="io_mia_hr.group_mia_hr"/>
+                             <button name="action_accept_exit_permission" string="Confirm" type="object" states="sent"
+                                class="oe_highlight" groups="io_mia_hr.group_mia_hr"/>
+<!--                             <button name="action_cancel_exit_permission" string="Cancel" type="object"-->
+<!--                                     special="cancel" class="btn-secondary"/>  states="draft"-->
+                                      <button string="Cancel" class="btn-secondary" special="cancel"
+                                              groups="io_mia_hr.group_mia_hr" states="draft"/>
                             <field name="state" widget="statusbar"
-                                   statusbar_visible="draft,done" readonly="1"/>
+                                   statusbar_visible="draft,sent,cancel,done" readonly="1"/>
                     </header>
                     <sheet>
                         <group cols="">
